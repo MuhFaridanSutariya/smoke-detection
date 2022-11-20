@@ -90,6 +90,7 @@ Selanjutnya import dataset dan menampilkan 5 data teratas:
 ```
 df = pd.read_csv('/content/smoke_detection_iot.csv',index_col = False)
 df.head()
+![hasil 5 data teratas](img/2.jpg)
 ```
 Kita dapat menghapus feature 'Unnamed: 0' Kemudian melihat dimensi dari dataset ini:
 ```

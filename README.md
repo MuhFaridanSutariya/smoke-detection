@@ -98,6 +98,7 @@ df = df.drop(columns='Unnamed: 0')
 print("Row: {}, Columns: {}".format(df.shape[0], df.shape[1]))
 ```
 ![hasil 5 data teratas](img/3.jpg)
+Dataset ini terdiri dari 62630 data dan 10 columns. seluruh dari dari dataset bertipe numeric.
 
 ### Exploratory Data Analysis - Deskripsi Variabel:
 Exploratory data analysis atau sering disingkat EDA merupakan proses investigasi awal pada data untuk menganalisis karakteristik, menemukan pola, anomali, dan memeriksa asumsi pada data. Teknik ini biasanya menggunakan bantuan statistik dan representasi grafis atau visualisasi.

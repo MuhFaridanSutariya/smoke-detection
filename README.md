@@ -3,20 +3,17 @@
 ## Domain Proyek
 
 Yang melatar belakangi saya membuat project ini adalah karena indonesia menjadi negara dengan mayoritas masyarakatnya perokok aktif dan banyak tempat yang   seharusnya dilarang merokok namun seringkali perokok tetap membakar rokoknya ditempat tersebut.   
-- link1 : https://www.tribunnews.com/internasional/2021/06/02/indonesia-peringkat-ke-3-dan-jepang-ke-7-terbanyak-perokok-di-dunia
-- link2 : https://www.suara.com/health/2021/05/30/132226/indonesia-masuk-10-negara-penyumbang-perokok-terbanyak-di-dunia
+- reference : https://www.tribunnews.com/internasional/2021/06/02/indonesia-peringkat-ke-3-dan-jepang-ke-7-terbanyak-perokok-di-dunia
+- reference : https://www.suara.com/health/2021/05/30/132226/indonesia-masuk-10-negara-penyumbang-perokok-terbanyak-di-dunia
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
 - kenapa masalah ini harus diselesaikan? karena banyak dari masyarakat indonesia sering melanggar peraturan dilarang merokok diarea tersebut mengakibatkan orang yang berada di area tersebut dapat terkena dampaknya juga bahkan dapat melebihi dampak yang dihasilkan dari perokok itu sendiri. orang-orang yang berada di no smoking area mengasumsikan kalo diarea tersebut tidak ada perokok sehingga orang-orang yang tidak ingin terkena asap rokok memilih tempat tersebut. selain itu model machine learning ini juga dapat digunakan untuk mendeteksi asap kebakaran jika didalam rumah atau ruangan terdapat asap. salah satu solusi yang dapat saya berikan adalah dengan cara membuat sebuah model machine learning untuk mendeteksi adanya asap ditempat tersebut, yang nantinya model machine learning tersebut dapat dikembangkan ke perangkat IoT agar dapat memfasilitasi no smoking area. jika perangkat IoT tersebut mendeteksi asap nantinya terdapat sebuah pemberitahuan seperti alarm. 
 - Menyertakan hasil riset terkait atau referensi. Referensi yang diberikan harus berasal dari sumber yang kredibel dan author yang jelas.
   
-  Format Referensi: [Perbandingan effect asap rokok pada smokers dan non-smokers](https://www.sciencedirect.com/science/article/abs/pii/S030057120500117X) 
+  Reference from paper: [Perbandingan effect asap rokok pada smokers dan non-smokers](https://www.sciencedirect.com/science/article/abs/pii/S030057120500117X) 
 
 ## Business Understanding
 
-Pada bagian ini, kamu perlu menjelaskan proses klarifikasi masalah.
-
-Bagian laporan ini mencakup:
+Pada bagian ini, Saya perlu menjelaskan proses klarifikasi masalah.
 
 ### Problem Statements
 
@@ -30,13 +27,7 @@ Menjelaskan tujuan dari pernyataan masalah:
 - Membuat sebuah model machine learning yang dapat mendeteksi asap disuatu tempat atau ruangan dengan akurat berdasarkan kriteria tertentu
 - Memberikan rasa aman kepada masyarakat indonesia yang ingin menghidari asap rokok disuatu tempat
 
-Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Menambahkan bagian “Solution Statement” yang menguraikan cara untuk meraih goals. Bagian ini dibuat dengan ketentuan sebagai berikut: 
-
     ### Solution statements
-    - Mengajukan 2 atau lebih solution statement. Misalnya, menggunakan dua atau lebih algoritma untuk mencapai solusi yang diinginkan atau melakukan improvement pada baseline model dengan hyperparameter tuning.
     - dapat menggunakan 1 algoritma machine learning yaitu Logistic Regression dan dari algoritma machine learning tersebut kita akan improve recall scorenya menggunakan hyperparameter tuning GridSearchCV.
 
 ## Data Understanding
@@ -61,13 +52,10 @@ Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:
 - CNT: Sample Count. Fire Alarm(Reality) If fire was present then value is 1 else it is 0
 - Fire Alarm: 1 means Positive and 0 means Not Positive
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
-
 ### Data Loading:
-- Langkah pertama import library yang kita butuhkan untuk kasus kali ini:
+- Langkah pertama import library yang kita butuhkan untuk kasus kali ini dan juga import datasetnya sekaligus menampilkan 5 data teratas:
 ```
-# liabraries for data manipulation and calculation math
+# libraries for data manipulation and calculation math
 import numpy as np
 import pandas as pd
 
@@ -97,6 +85,10 @@ import seaborn as sns
 # libraries for ignore warning after run code
 import warnings
 warnings.filterwarnings('ignore')
+```
+```
+df = pd.read_csv('/content/smoke_detection_iot.csv',index_col = False)
+df.head()
 ```
 
 

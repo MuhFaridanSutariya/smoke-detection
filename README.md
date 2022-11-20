@@ -154,8 +154,49 @@ for i, col in enumerate(cols):
 > Dengan melihat konsistensi nilai-nilai outlier dapat diartikan bahwa hal tersebut bukan karena kesalahan manusia saat menghitung.
 
 ### Exploratory Data Analysis - Univariate Analysis:
+- Untuk melihat proporsi dari nilai variabel target yang kita punya:
+```
+trace = go.Pie(labels = ['Yes_Fire', 'No_Fire'], values = df['Fire Alarm'].value_counts(), 
+               textfont=dict(size=15), opacity = 0.8,
+               marker=dict(colors=['ldarkblue','orange'], 
+                           line=dict(color='#000000', width=1.5)))
+
+layout = dict(title =  'Distribution of Fire Alarm variable')
+           
+fig = dict(data = [trace], layout=layout)
+py.iplot(fig)
+```
+Terjadi data imbalance pada variabel target. kita dapat melakukan pendekatan undersampling pada variabel target atau dengan cara lain yaitu memilih metric yang tepat seperti recall, precision dan F1 Score. kita tidak dapat menggunakan metric akurasi karena dapat menyebabkan bias pada saat scoring model.
 
 ### Exploratory Data Analysis - Multivariate Analysis:
+- Untuk melihat KDE plot dari tiap variable:
+```
+plt.figure(figsize=(15,5))
+sns.kdeplot( data=df, x='Humidity[%]', hue='Fire Alarm', fill = True)
+plt.legend(loc='upper left', labels=['no fire', 'yes fire'])
+plt.title('Humidity vs Fire density')
+plt.show()
+```
+images humadity
+> Selama experiment kemungkinan fire alarm ditempat yang memiliki kelembapan cukup tinggi. karena puncak density pada visualisasi diatas mencakup kelembapan > 40%
+images temperature
+> Selama experiment kemungkinan fire alarm ditempat yang memiliki temperature sekitar 20 celcius
+images Pressure
+> Berdasarkan puncak density dari visualisasi diatas dapat kita lihat bahwa semakin tinggi Pressure maka kemungkinan untuk fire alarm berbunyi semakin besar juga
+images Raw H2
+> Berdasarkan puncak density dari visualisasi diatas dapat kita lihat bahwa yes fire dan no fire memiliki rentang yang serupa yaitu 12500 - 1340
+images Raw Ethanol
+> Berdasarkan puncak density dari visualisasi diatas dapat kita lihat bahwa yes fire memiliki kecenderungan berada di jumlah Raw Ethanol sekitar 19500 - 20500 dan no fire memiliki kecenderungan berada di jumlah Raw Ethanol sekitar 20000 - 21000
+
+- Untuk melihat korelasi antara tiap feature:
+ ```
+plt.figure(figsize = (12,12))
+sns.heatmap(df.corr(),annot = True,cmap = 'GnBu')
+plt.show()
+```
+> Semua column 'PM's dan 'NC's memiliki korelasi yang tinggi dengan sesama kolom tersebut.
+> Tidak ada feature yang berkorelasi tinggi dengan feature target. Humidity, Pressure dan Raw H2 adalah feature yang memiliki korelasi positif namun tidak tinggi dan sisanya adalah feature yang berkorelasi rendah dengan feature targetnya.
+
 
 ## Data Preparation
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.

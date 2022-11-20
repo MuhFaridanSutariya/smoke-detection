@@ -411,7 +411,7 @@ for mean, stdev, param in zip(means, stds, params):
     print("%f (%f) with: %r" % (mean, stdev, param))
 ```
 
-![hasil 5 data teratas](img/29.png)
+![hasil 5 data teratas](img/29.jpg)
 
 Alhamdulillah, kita mendapat score dari metric recall yang sangat baik yaitu 96% namun score ini masih dapat kita improve menggunakan beberapa cara yaitu feature importance, melakukan feature engineering dan menggunakan parameter lebih banyak lagi untuk di hyperparameter tuning.
 

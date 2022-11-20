@@ -183,6 +183,7 @@ layout = dict(title =  'Distribution of Fire Alarm variable')
 fig = dict(data = [trace], layout=layout)
 py.iplot(fig)
 ```
+![hasil 5 data teratas](img/13.png)
 Terjadi data imbalance pada variabel target. kita dapat melakukan pendekatan undersampling pada variabel target atau dengan cara lain yaitu memilih metric yang tepat seperti recall, precision dan F1 Score. kita tidak dapat menggunakan metric akurasi karena dapat menyebabkan bias pada saat scoring model.
 
 ### Exploratory Data Analysis - Multivariate Analysis:

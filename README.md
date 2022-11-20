@@ -218,7 +218,7 @@ for col in df.columns.tolist():
 ```
 > Tidak ada feature dengan satu nilai saja maka tidak ada feature yang harus dibuang. 
 
-- menghapus kolom UTC karena tidak berpengaruh pada model machine learning. 
+- menghapus kolom UTC karena tidak berpengaruh pada model machine learning sehingga hal ini dapat memudahkan machine learning dalam pencari pola dari dataset kita.
 ```
 df = df.drop(columns='UTC')
 ```
@@ -289,12 +289,51 @@ X_train = scaling.fit_transform(X_train)
 ```
 
 ## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
-- Jika menggunakan satu algoritma pada solution statement, lakukan proses improvement terhadap model dengan hyperparameter tuning. **Jelaskan proses improvement yang dilakukan**.
-- Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. **Jelaskan mengapa memilih model tersebut sebagai model terbaik**.
+Kita akan lakukan training pada data train dan melakukan predict pada data test yang telah kita split sebelumnya. Algoritma yang akan kita gunakan adalah Logistic Regression.
+
+Logistic Regression hampir mirip dengan Linear Regression, memiliki kemiripan yaitu sama-sama memiliki garis regresi. Salah satu yang membedakan adalah Logistic Regression digunakan untuk menentukan prediksi yang kita buat benar atau salah sedangkan Linear Regression digunakan untuk memprediksi nilai yang kontinu.
+
+Kenapa saya menggunakan Logistic Regression? ini dikarenakan alogritma model ini sangat baik bahkan memang keahliannya dalam menangani kasus binary classification.
+
+Kelebihan Logistic Regression:
+- Ketika terjadi overfitting pada algoritma Logistic Regression kita dapat menggunakan parameter regularisasi (L1 dan L2) untuk menghindari overfitting.
+- Tidak memerlukan spek device yang tinggi untuk melakukan training pada algoritma logistic regression.
+- bagus Ketika digunakan pada masalah binary classification.
+illustration images
+
+Kekurangan Logistic Regression: 
+- Pada data dengan high dimensional akan memiliki kecenderungan overfitting, salah satu cara untuk menghindari hal tersebut adalah dengan melakukan regularization akan tetapi hal tersebut dapat menambah kompleksitas dari model yang akan dihasilkan
+- Permasalahan non-linear sulit untuk diselesaikan menggunakan logistic regression dikarenakan memiliki linear decision surface.
+
+Selanutnya kita Mendefine sebuah object dari LogisticRegression dan beberapa parameter yang akan kita lakukan hyperparameter tuning untuk mendapatkan parameter terbaik pada case kita. 
+
+```
+model = LogisticRegression()
+solvers = ['newton-cg', 'lbfgs', 'liblinear']
+penalty = ['l2']
+c_values = [100, 10, 1.0, 0.1, 0.01]
+```
+penjelasan dari setiap parameter:
+
+- solvers adalah optimizer dari algoritma yang akan kita gunakan sebagai method untuk mencari loss terkecil dari gradient descent
+- C_values adalah nilai dari regularization yang kita gunakan, semakin kecil semakin memanandakan regularization yang kita lakukan semakin kuat. gunanya adalah untuk menghindari overfitting.
+- penalty adalah bentuk regularization dari nilai yang telah kita specify sebelumnya pada c_values. terdapat beberapa jenis penalty yang dapat kita kombinasikan sehingga mendapat hasil yang maksimal:
+images jenis regularization
+
+Selanjutnya adalah melakukan hyperparameter tuning menggunakan GridSearchCV. GridSearchCV adalah metode pemilihan kombinasi model dan hyperparameter dengan cara menguji coba satu persatu kombinasi dan melakukan validasi untuk setiap kombinasi. Tujuannya adalah menentukan kombinasi yang menghasilkan performa model terbaik yang dapat dipilih untuk dijadikan model untuk prediksi.
+
+```
+grid = dict(solver=solvers,penalty=penalty,C=c_values)
+grid_search = GridSearchCV(estimator=model, param_grid=grid, n_jobs=-1, cv=3, scoring='recall')
+grid_result = grid_search.fit(X, y)
+```
+penjelasan dari parameter yang kita gunakan:
+
+- estimator adalah object dari algoritma yang telah kita define sebelumnya.
+- param_grid adalah parameter dari logistic regression yang akan kita lakukan hyperparameter tuning untuk mencari kombinasi parameter yang terbaik
+- n_jobs adalah jumlah dari processor yang akan kita gunakan untuk nge running jobs tersebut secara parallel. value -1 berarti kita nge running jobs tersebut menggunakan seluruh dari processor yang kita punya.
+- cv adalah cross-validation generator yang dimana kita menentukan ingin melakukan berapa kali percobaan secara acak pada dataset kita. illustrasi:
 
 ## Evaluation
 Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
@@ -309,8 +348,4 @@ Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, probl
 - Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
 
 **---Ini adalah bagian akhir laporan---**
-
-_Catatan:_
-- _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
-- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
 

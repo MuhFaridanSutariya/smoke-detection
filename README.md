@@ -51,7 +51,7 @@ Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:
 - Fire Alarm: 1 means Positive and 0 means Not Positive
 
 ### Data Loading:
-- Langkah pertama import library yang kita butuhkan untuk kasus kali ini:
+Langkah pertama import library yang kita butuhkan untuk kasus kali ini:
 ```
 # libraries for data manipulation and calculation math
 import numpy as np
@@ -84,12 +84,12 @@ import seaborn as sns
 import warnings
 warnings.filterwarnings('ignore')
 ```
-- Selanjutnya import dataset dan menampilkan 5 data teratas:
+Selanjutnya import dataset dan menampilkan 5 data teratas:
 ```
 df = pd.read_csv('/content/smoke_detection_iot.csv',index_col = False)
 df.head()
 ```
-- Kita dapat menghapus feature 'Unnamed: 0' Kemudian melihat dimensi dari dataset ini:
+Kita dapat menghapus feature 'Unnamed: 0' Kemudian melihat dimensi dari dataset ini:
 ```
 df = df.drop(columns='Unnamed: 0')
 df.shape
@@ -107,13 +107,13 @@ Cakupan proses EDA sangat luas. Namun, secara umum, Anda dapat melakukan proses 
 5. Bagaimana korelasi antara fitur dan target?
 
 
-- Melakukan pengecekkan informasi pada tiap variabel pada dataset kita: 
+Melakukan pengecekkan informasi pada tiap variabel pada dataset kita: 
 ```
 df.info()
 ```
 > Seluruh feature pada dataset kita bertipe numeric.
 
-- Melakukan pengecekkan deskripsi statistik pada dataset kita untuk mengetahui apakah terdapat anomalies:
+Melakukan pengecekkan deskripsi statistik pada dataset kita untuk mengetahui apakah terdapat anomalies:
 ```
 df.describe()
 ```
@@ -131,7 +131,7 @@ Fungsi describe() memberikan informasi statistik pada masing-masing kolom, antar
 8. Max adalah nilai maksimum.
 
 ### Exploratory Exploratory Data Analysis - Menangani Missing Value dan Outliers:
-- Untuk Melihat missing value pada dataset kita:
+Untuk Melihat missing value pada dataset kita:
 ```
 Total = df.isnull().sum().sort_values(ascending=False)          
 
@@ -142,7 +142,7 @@ missing_data
 ```
 > Tidak terdapat missing value pada dataset kita.
 
-- Untuk melihat outliers pada dataset kita: 
+Untuk melihat outliers pada dataset kita: 
 ```
 cols = df.columns
 for i, col in enumerate(cols):
@@ -154,7 +154,7 @@ for i, col in enumerate(cols):
 > Dengan melihat konsistensi nilai-nilai outlier dapat diartikan bahwa hal tersebut bukan karena kesalahan manusia saat menghitung.
 
 ### Exploratory Data Analysis - Univariate Analysis:
-- Untuk melihat proporsi dari nilai variabel target yang kita punya:
+Untuk melihat proporsi dari nilai variabel target yang kita punya:
 ```
 trace = go.Pie(labels = ['Yes_Fire', 'No_Fire'], values = df['Fire Alarm'].value_counts(), 
                textfont=dict(size=15), opacity = 0.8,
@@ -169,7 +169,7 @@ py.iplot(fig)
 Terjadi data imbalance pada variabel target. kita dapat melakukan pendekatan undersampling pada variabel target atau dengan cara lain yaitu memilih metric yang tepat seperti recall, precision dan F1 Score. kita tidak dapat menggunakan metric akurasi karena dapat menyebabkan bias pada saat scoring model.
 
 ### Exploratory Data Analysis - Multivariate Analysis:
-- Untuk melihat KDE plot dari tiap variable:
+Untuk melihat KDE plot dari tiap variable:
 ```
 plt.figure(figsize=(15,5))
 sns.kdeplot( data=df, x='Humidity[%]', hue='Fire Alarm', fill = True)
@@ -188,7 +188,7 @@ plt.show()
    - images Raw Ethanol
    > Berdasarkan puncak density dari visualisasi diatas dapat kita lihat bahwa yes fire memiliki kecenderungan berada di jumlah Raw Ethanol sekitar 19500 - 20500 dan no fire memiliki kecenderungan berada di jumlah Raw Ethanol sekitar 20000 - 21000
 
-- Untuk melihat korelasi antara tiap feature:
+Untuk melihat korelasi antara tiap feature:
  ```
 plt.figure(figsize = (12,12))
 sns.heatmap(df.corr(),annot = True,cmap = 'GnBu')

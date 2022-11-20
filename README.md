@@ -31,7 +31,7 @@ Menjelaskan tujuan dari pernyataan masalah:
     - dapat menggunakan 1 algoritma machine learning yaitu Logistic Regression dan dari algoritma machine learning tersebut kita akan improve recall scorenya menggunakan hyperparameter tuning GridSearchCV.
 
 ## Data Understanding
-Link download dataset: [https://www.kaggle.com/datasets/deepcontractor/smoke-detection-dataset).
+Link download dataset: https://www.kaggle.com/datasets/deepcontractor/smoke-detection-dataset
 
 Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
 
@@ -153,6 +153,7 @@ for i, col in enumerate(cols):
   sns.boxplot(x=df[col])
   plt.show()
 ```
+> Dengan melihat konsistensi nilai-nilai outlier dapat diartikan bahwa hal tersebut bukan karena kesalahan manusia saat menghitung.
 
 ### Exploratory Data Analysis - Univariate Analysis:
 

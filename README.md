@@ -11,7 +11,7 @@ Yang melatar belakangi saya membuat project ini adalah karena indonesia menjadi 
  
 ## Business Understanding
 
-Pada bagian ini, Saya perlu menjelaskan proses klarifikasi masalah.
+Pada bagian ini, Saya akan menjelaskan proses klarifikasi masalah.
 
 ### Problem Statements
 

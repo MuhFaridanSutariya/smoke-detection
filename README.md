@@ -250,6 +250,44 @@ df['dimension'] = pca.transform(df.loc[:, ('PM1.0', 'PM2.5', 'NC0.5', 'NC1.0','N
 df.drop(['PM1.0', 'PM2.5', 'NC0.5', 'NC1.0','NC2.5'], axis=1, inplace=True)
 ```
 
+### Pembagian dataset
+
+Setelah kita melakukan dimensional reduction, kita dapat melakukan split data ke dalam beberapa bagian yaitu data train dan data test. kita melakukan beberapa transformasi pada data train sedangkan data test kita gunakan sebagai data uji yang diasumsikan adalah data baru sama halnya nanti di production. karna data test adalah data baru sehingga kita tidak diperkenankan untuk melakukan transformasi apapun, jika kita melakukan transformasi pada data test itu akan menimbulkan masalah baru yaitu data leakage dan dapat menyebabkan model machine learning kita bias.
+
+proporsi pembagian data latih dan uji biasanya adalah 80:20. Ingatlah bahwa proporsi ini hanya kebiasaan umum saja. Tujuan dari data uji adalah untuk untuk mengukur kinerja model pada data baru. Jadi, jika dataset yang kita miliki berukuran sangat kecil, misalnya kurang dari 1.000 sampel, maka pembagian 80:20 ini cukup ideal. Namun, jika memiliki dataset berukuran besar, kita perlu memikirkan strategi pembagian dataset lain agar proporsi data uji tidak terlalu banyak.
+
+Sebagai contoh, Anda memiliki dataset berjumlah 5 juta sampel. Dengan proporsi pembagian 80:20, maka data uji akan berjumlah 1 juta sampel. Tentu ini merupakan jumlah yang terlalu banyak karena kita tidak membutuhkan 1 juta sampel hanya untuk proses pengujian. Dalam kasus proses pengujian ini sebenarnya kita cukup menggunakan 1-2% data atau sebanyak 100.000 hingga 200.000 sampel saja.
+
+<b>Bisa disimpulkan pembagian proporsi untuk data train dan data test sangat relative tergantung ketersedian dataset yang kita punya.</b>
+
+Berikut adalah code untuk melakukan pembagian proporsi data train dan data test:
+```
+X = df.drop(["Fire Alarm"],axis =1)
+y = df["Fire Alarm"]
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.1, random_state = 42)
+```
+Penjelasan:
+- X adalah sebagai variabel independen
+- y adalah sebagai variabel dependen
+- test_size adalah proporsi untuk data testnya
+- random_state berfungsi untuk mengontrol random number generator yang digunakan.
+
+Melihat dimensi hasil pembagian pada data train dan data test:
+```
+print(f'Total # of sample in whole dataset: {len(X)}')
+print(f'Total # of sample in train dataset: {len(X_train)}')
+print(f'Total # of sample in test dataset: {len(X_test)}')
+```
+
+### Standarisasi
+Setelah melakukan split data ke dalam data train dan data test, Selanjutnya adalah melakukan data scaling, Karena value pada tiap feature memiliki angka yang signifikan dan hal itu dapat mengakibatkan model dari machine learning kita kesulitan dalam mencari polanya sehingga kita dapat menyeragamkan value tersebut kedalam rentang -1 to 1 menggunakan StandardScaler pada library sklearn.
+
+code untuk standarisasi:
+```
+scaling = StandardScaler()
+X_train = scaling.fit_transform(X_train)
+```
+
 ## Modeling
 Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
 

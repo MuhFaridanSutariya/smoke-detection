@@ -245,8 +245,6 @@ plt.show()
 - Tidak ada feature yang berkorelasi tinggi dengan feature target. Humidity, Pressure dan Raw H2 adalah feature yang memiliki korelasi positif namun tidak tinggi dan sisanya adalah feature yang berkorelasi rendah dengan feature targetnya.
 
 ## Data Preparation
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
-
 Pada bagian ini kita akan melakukan empat tahap persiapan data, yaitu:
 
 - Feature Selection.
@@ -260,15 +258,17 @@ Feature selection adalah proses mengurangi jumlah fitur atau variabel input deng
 - Fitur yang sangat didominasi oleh satu nilai saja akan dibuang pada tahap ini. karena feature yang didominasi satu nilai saja tidak berarti untuk machine learning.
 ```
 for col in df.columns.tolist():
-    print(df[col].value_counts(normalize=True)*100)
+    print(df[col].value_counts().count())
     print('\n')
 ```
+![hasil 5 data teratas](img/20.jpg)
 > Tidak ada feature dengan satu nilai saja maka tidak ada feature yang harus dibuang. 
 
 - menghapus kolom UTC karena tidak berpengaruh pada model machine learning sehingga hal ini dapat memudahkan machine learning dalam pencari pola dari dataset kita.
 ```
 df = df.drop(columns='UTC')
 ```
+![hasil 5 data teratas](img/21.jpg)
 
 ### Principal Component Analysis (PCA)
 PCA bekerja menggunakan metode aljabar linier. Ia mengasumsikan bahwa sekumpulan data pada arah dengan varians terbesar merupakan yang paling penting (utama). PCA umumnya digunakan ketika variabel dalam data memiliki korelasi yang tinggi. Korelasi tinggi ini menunjukkan data yang berulang atau redundant.
@@ -353,7 +353,7 @@ Kekurangan Logistic Regression:
 - Pada data dengan high dimensional akan memiliki kecenderungan overfitting, salah satu cara untuk menghindari hal tersebut adalah dengan melakukan regularization akan tetapi hal tersebut dapat menambah kompleksitas dari model yang akan dihasilkan
 - Permasalahan non-linear sulit untuk diselesaikan menggunakan logistic regression dikarenakan memiliki linear decision surface.
 
-Selanutnya kita Mendefine sebuah object dari LogisticRegression dan beberapa parameter yang akan kita lakukan hyperparameter tuning untuk mendapatkan parameter terbaik pada case kita. 
+Selanjutnya kita Mendefine sebuah object dari LogisticRegression dan beberapa parameter yang akan kita lakukan hyperparameter tuning untuk mendapatkan parameter terbaik pada case kita. 
 
 ```
 model = LogisticRegression()

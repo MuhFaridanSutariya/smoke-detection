@@ -197,12 +197,40 @@ plt.show()
 ```
    - images humadity
    > Selama experiment kemungkinan fire alarm ditempat yang memiliki kelembapan cukup tinggi. karena puncak density pada visualisasi diatas mencakup kelembapan > 40%
+```
+plt.figure(figsize=(15,5))
+sns.kdeplot( data=df, x='Temperature[C]', hue='Fire Alarm', fill = True)
+plt.legend(loc='upper left', labels=['no fire', 'yes fire'])
+plt.title('Temperature vs Fire density')
+plt.show()
+```
    - images temperature
    > Selama experiment kemungkinan fire alarm ditempat yang memiliki temperature sekitar 20 celcius
+```
+plt.figure(figsize=(15,5))
+sns.kdeplot( data=df, x='Pressure[hPa]', hue='Fire Alarm', fill = True)
+plt.legend(loc='upper left', labels=['no fire', 'yes fire'])
+plt.title('Pressure vs Fire density')
+plt.show()
+```
    - images Pressure
    > Berdasarkan puncak density dari visualisasi diatas dapat kita lihat bahwa semakin tinggi Pressure maka kemungkinan untuk fire alarm berbunyi semakin besar juga
+```
+plt.figure(figsize=(15,5))
+sns.kdeplot( data=df, x='Raw H2', hue='Fire Alarm', fill = True)
+plt.legend(loc='upper left', labels=['no fire', 'yes fire'])
+plt.title('Raw H2 vs Fire density')
+plt.show()
+```
    - images Raw H2
    > Berdasarkan puncak density dari visualisasi diatas dapat kita lihat bahwa yes fire dan no fire memiliki rentang yang serupa yaitu 12500 - 1340
+```
+plt.figure(figsize=(15,5))
+sns.kdeplot( data=df, x='Raw Ethanol', hue='Fire Alarm', fill = True)
+plt.legend(loc='upper left', labels=['no fire', 'yes fire'])
+plt.title('Raw Ethanol vs Fire density')
+plt.show()
+```
    - images Raw Ethanol
    > Berdasarkan puncak density dari visualisasi diatas dapat kita lihat bahwa yes fire memiliki kecenderungan berada di jumlah Raw Ethanol sekitar 19500 - 20500 dan no fire memiliki kecenderungan berada di jumlah Raw Ethanol sekitar 20000 - 21000
 

@@ -197,13 +197,58 @@ plt.show()
 - Semua column 'PM's dan 'NC's memiliki korelasi yang tinggi dengan sesama kolom tersebut
 - Tidak ada feature yang berkorelasi tinggi dengan feature target. Humidity, Pressure dan Raw H2 adalah feature yang memiliki korelasi positif namun tidak tinggi dan sisanya adalah feature yang berkorelasi rendah dengan feature targetnya.
 
-
 ## Data Preparation
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
+Pada bagian ini kita akan melakukan empat tahap persiapan data, yaitu:
+
+- Feature Selection.
+- Reduksi dimensi dengan Principal Component Analysis (PCA).
+- Pembagian dataset dengan fungsi train_test_split dari library sklearn.
+- Standarisasi.
+
+### Feature Selection
+Feature selection adalah proses mengurangi jumlah fitur atau variabel input dengan memilih fitur-fitur yang dianggap paling relevan terhadap model.
+
+- Fitur yang sangat didominasi oleh satu nilai saja akan dibuang pada tahap ini. karena feature yang didominasi satu nilai saja tidak berarti untuk machine learning.
+```
+for col in df.columns.tolist():
+    print(df[col].value_counts(normalize=True)*100)
+    print('\n')
+```
+> Tidak ada feature dengan satu nilai saja maka tidak ada feature yang harus dibuang. 
+
+- menghapus kolom UTC karena tidak berpengaruh pada model machine learning. 
+```
+df = df.drop(columns='UTC')
+```
+
+### Principal Component Analysis (PCA)
+PCA bekerja menggunakan metode aljabar linier. Ia mengasumsikan bahwa sekumpulan data pada arah dengan varians terbesar merupakan yang paling penting (utama). PCA umumnya digunakan ketika variabel dalam data memiliki korelasi yang tinggi. Korelasi tinggi ini menunjukkan data yang berulang atau redundant.
+
+Berdasarkan visualisasi korelasi diatas kita akan melakukan PCA pada feature PM1.0, PM2.5, NC0.5, NC1.0 dan NC2.5.
+
+```
+pca = PCA(n_components=5, random_state=42)
+pca.fit(df[['PM1.0', 'PM2.5', 'NC0.5', 'NC1.0','NC2.5']])
+princ_comp = pca.transform(df[['PM1.0', 'PM2.5', 'NC0.5', 'NC1.0','NC2.5']])
+```
+- parameter n_components adalah jumlah komponen atau dimensi seperti dikasus ini 5 yaitu 'PM1.0', 'PM2.5', 'NC0.5', 'NC1.0' dan 'NC2.5'
+- parameter random_state berfungsi untuk mengontrol random number generator yang digunakan. Parameter ini berupa bilangan integer dan nilainya bebas. Pada kasus ini, kita menerapkan random_state = 42. Berapa pun nilai integer yang kita tentukan. selama itu bilangan integer, ia akan memberikan hasil yang sama setiap kali dilakukan pemanggilan fungsi (dalam kasus kita, class PCA).
+
+```
+pca.explained_variance_ratio_.round(3)
+```
+> Arti dari output di atas adalah, 0.9% informasi pada kelima fitur 'PM1.0', 'PM2.5', 'NC0.5', 'NC1.0' dan 'NC2.5' terdapat pada PC pertama. Sedangkan sisanya, sebesar 0.1%, 0.0%, 0.0% dan 0.0% terdapat pada PC kedua, ketiga, keempat dan kelima.
+
+Dari hasil diatas kita dapat mempertahankan PC pertama saja untuk menggantikan kelima feature yang telah direduksi sebelumnya lalu kita beri nama feature ini dengan 'dimension'
+
+```
+pca = PCA(n_components=1, random_state=42)
+pca.fit(df[['PM1.0', 'PM2.5', 'NC0.5', 'NC1.0','NC2.5']])
+df['dimension'] = pca.transform(df.loc[:, ('PM1.0', 'PM2.5', 'NC0.5', 'NC1.0','NC2.5')]).flatten()
+df.drop(['PM1.0', 'PM2.5', 'NC0.5', 'NC1.0','NC2.5'], axis=1, inplace=True)
+```
 
 ## Modeling
 Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.

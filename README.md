@@ -64,6 +64,50 @@ Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
 
+### Data Loading:
+- Langkah pertama import library yang kita butuhkan untuk kasus kali ini:
+```
+# liabraries for data manipulation and calculation math
+import numpy as np
+import pandas as pd
+
+# libraries evaluation
+from sklearn.metrics import recall_score
+from sklearn.model_selection import GridSearchCV
+
+# libraries for preprocessing
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+
+# libraries for machine learning
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.svm import SVC
+
+# libraries for data visualization
+from plotly.subplots import make_subplots
+import plotly.graph_objs as go
+import plotly.offline as py
+import plotly.express as px
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# libraries for ignore warning after run code
+import warnings
+warnings.filterwarnings('ignore')
+```
+
+
+### Exploratory Data Analysis - Deskripsi Variabel:
+
+### Exploratory Exploratory Data Analysis - Menangani Missing Value dan Outliers:
+
+### Exploratory Data Analysis - Univariate Analysis:
+
+### Exploratory Data Analysis - Multivariate Analysis:
+
 ## Data Preparation
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
 

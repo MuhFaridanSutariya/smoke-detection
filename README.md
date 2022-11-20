@@ -357,7 +357,8 @@ Kelebihan Logistic Regression:
 - Ketika terjadi overfitting pada algoritma Logistic Regression kita dapat menggunakan parameter regularisasi (L1 dan L2) untuk menghindari overfitting.
 - Tidak memerlukan spek device yang tinggi untuk melakukan training pada algoritma logistic regression.
 - bagus Ketika digunakan pada masalah binary classification.
-illustration images
+
+![hasil 5 data teratas](img/28.png)
 
 Kekurangan Logistic Regression: 
 - Pada data dengan high dimensional akan memiliki kecenderungan overfitting, salah satu cara untuk menghindari hal tersebut adalah dengan melakukan regularization akan tetapi hal tersebut dapat menambah kompleksitas dari model yang akan dihasilkan
@@ -376,7 +377,8 @@ penjelasan dari setiap parameter:
 - solvers adalah optimizer dari algoritma yang akan kita gunakan sebagai method untuk mencari loss terkecil dari gradient descent
 - C_values adalah nilai dari regularization yang kita gunakan, semakin kecil semakin memanandakan regularization yang kita lakukan semakin kuat. gunanya adalah untuk menghindari overfitting.
 - penalty adalah bentuk regularization dari nilai yang telah kita specify sebelumnya pada c_values. terdapat beberapa jenis penalty yang dapat kita kombinasikan sehingga mendapat hasil yang maksimal:
-images jenis regularization
+
+![hasil 5 data teratas](img/26.png)
 
 Selanjutnya adalah melakukan hyperparameter tuning menggunakan GridSearchCV. GridSearchCV adalah metode pemilihan kombinasi model dan hyperparameter dengan cara menguji coba satu persatu kombinasi dan melakukan validasi untuk setiap kombinasi. Tujuannya adalah menentukan kombinasi yang menghasilkan performa model terbaik yang dapat dipilih untuk dijadikan model untuk prediksi.
 
@@ -391,6 +393,8 @@ penjelasan dari parameter yang kita gunakan:
 - param_grid adalah parameter dari logistic regression yang akan kita lakukan hyperparameter tuning untuk mencari kombinasi parameter yang terbaik
 - n_jobs adalah jumlah dari processor yang akan kita gunakan untuk nge running jobs tersebut secara parallel. value -1 berarti kita nge running jobs tersebut menggunakan seluruh dari processor yang kita punya.
 - cv adalah cross-validation generator yang dimana kita menentukan ingin melakukan berapa kali percobaan secara acak pada dataset kita. illustrasi:
+
+![hasil 5 data teratas](img/27.jpg)
 
 ## Evaluation
 Menampilkan hasil dari prediksi berupa score dari setiap kombinasi parameter yang kita lakukan tuning sebelumnya.

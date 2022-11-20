@@ -2,7 +2,7 @@
 
 ## Domain Proyek
 
-![smoking](img/1.png)
+![smoking](img/4.jpeg)
 
 Yang melatar belakangi saya membuat project ini adalah karena indonesia menjadi negara dengan mayoritas masyarakatnya perokok aktif dan banyak tempat yang   seharusnya dilarang merokok namun seringkali perokok tetap membakar rokoknya ditempat tersebut.   
 - reference 1: https://www.tribunnews.com/internasional/2021/06/02/indonesia-peringkat-ke-3-dan-jepang-ke-7-terbanyak-perokok-di-dunia
@@ -17,15 +17,17 @@ Pada bagian ini, Saya akan menjelaskan proses klarifikasi masalah.
 
 ### Problem Statements
 
+![smoking](img/1.png)
+
 Menjelaskan pernyataan masalah latar belakang:
-- Masyarakat indonesia yang merokok disembarang tempat tanpa memperdulikan sekitar
-- Asap kebakaran sulit untuk diprediksi jika secara manual
+- Masyarakat indonesia yang merokok disembarang tempat tanpa memperdulikan sekitar.
+- Asap kebakaran sulit untuk diprediksi jika secara manual.
 
 ### Goals
 
 Menjelaskan tujuan dari pernyataan masalah:
-- Membuat sebuah model machine learning yang dapat mendeteksi asap disuatu tempat atau ruangan dengan akurat berdasarkan kriteria tertentu
-- Memberikan rasa aman kepada masyarakat indonesia yang ingin menghidari asap rokok disuatu tempat
+- Membuat sebuah model machine learning yang dapat mendeteksi asap disuatu tempat atau ruangan yang berpotensi membahayakan manusia dengan akurat.
+- Memberikan rasa aman kepada masyarakat indonesia yang ingin menghidari asap rokok disuatu tempat.
 
     ### Solution statements
     - dapat menggunakan 1 algoritma machine learning yaitu Logistic Regression dan dari algoritma machine learning tersebut kita akan improve recall scorenya menggunakan hyperparameter tuning GridSearchCV.

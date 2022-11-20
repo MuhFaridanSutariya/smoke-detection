@@ -91,9 +91,33 @@ warnings.filterwarnings('ignore')
 df = pd.read_csv('/content/smoke_detection_iot.csv',index_col = False)
 df.head()
 ```
-
+- Kita dapat menghapus feature 'Unnamed: 0' Kemudian melihat dimensi dari dataset ini:
+```
+df = df.drop(columns='Unnamed: 0')
+df.shape
+```
 
 ### Exploratory Data Analysis - Deskripsi Variabel:
+Exploratory data analysis atau sering disingkat EDA merupakan proses investigasi awal pada data untuk menganalisis karakteristik, menemukan pola, anomali, dan memeriksa asumsi pada data. Teknik ini biasanya menggunakan bantuan statistik dan representasi grafis atau visualisasi.
+
+Cakupan proses EDA sangat luas. Namun, secara umum, Anda dapat melakukan proses EDA untuk menjawab beberapa pertanyaan berikut:
+
+  - Apa saja jenis variabel pada dataset?
+  - Bagaimana distribusi variabel dalam dataset?
+  - Apakah ada missing value?
+  - Apakah ada fitur yang tidak berguna (redundant)?
+  - Bagaimana korelasi antara fitur dan target?
+
+- Melakukan pengecekkan informasi pada tiap variabel pada dataset kita: 
+```
+df.info()
+```
+> Seluruh feature pada dataset kita bertipe numeric.
+- Melakukan pengecekkan deskripsi statistik pada dataset kita untuk mengetahui apakah terdapat anomalies:
+```
+df.describe()
+```
+
 
 ### Exploratory Exploratory Data Analysis - Menangani Missing Value dan Outliers:
 

@@ -120,6 +120,7 @@ Melakukan pengecekkan informasi pada tiap variabel pada dataset kita:
 ```
 df.info()
 ```
+![hasil 5 data teratas](img/5.jpg)
 > Seluruh feature pada dataset kita bertipe numeric.
 
 Melakukan pengecekkan deskripsi statistik pada dataset kita untuk mengetahui apakah terdapat anomalies:

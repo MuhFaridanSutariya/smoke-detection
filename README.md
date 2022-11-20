@@ -158,7 +158,6 @@ Untuk melihat outliers pada dataset kita:
 ```
 cols = df.columns
 for i, col in enumerate(cols):
-  print("Column:",col)
   plt.figure()
   sns.boxplot(x=df[col])
   plt.show()

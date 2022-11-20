@@ -177,16 +177,16 @@ plt.legend(loc='upper left', labels=['no fire', 'yes fire'])
 plt.title('Humidity vs Fire density')
 plt.show()
 ```
-images humadity
-> Selama experiment kemungkinan fire alarm ditempat yang memiliki kelembapan cukup tinggi. karena puncak density pada visualisasi diatas mencakup kelembapan > 40%
-images temperature
-> Selama experiment kemungkinan fire alarm ditempat yang memiliki temperature sekitar 20 celcius
-images Pressure
-> Berdasarkan puncak density dari visualisasi diatas dapat kita lihat bahwa semakin tinggi Pressure maka kemungkinan untuk fire alarm berbunyi semakin besar juga
-images Raw H2
-> Berdasarkan puncak density dari visualisasi diatas dapat kita lihat bahwa yes fire dan no fire memiliki rentang yang serupa yaitu 12500 - 1340
-images Raw Ethanol
-> Berdasarkan puncak density dari visualisasi diatas dapat kita lihat bahwa yes fire memiliki kecenderungan berada di jumlah Raw Ethanol sekitar 19500 - 20500 dan no fire memiliki kecenderungan berada di jumlah Raw Ethanol sekitar 20000 - 21000
+   - images humadity
+   > Selama experiment kemungkinan fire alarm ditempat yang memiliki kelembapan cukup tinggi. karena puncak density pada visualisasi diatas mencakup kelembapan > 40%
+   - images temperature
+   > Selama experiment kemungkinan fire alarm ditempat yang memiliki temperature sekitar 20 celcius
+   - images Pressure
+   > Berdasarkan puncak density dari visualisasi diatas dapat kita lihat bahwa semakin tinggi Pressure maka kemungkinan untuk fire alarm berbunyi semakin besar juga
+   - images Raw H2
+   > Berdasarkan puncak density dari visualisasi diatas dapat kita lihat bahwa yes fire dan no fire memiliki rentang yang serupa yaitu 12500 - 1340
+   - images Raw Ethanol
+   > Berdasarkan puncak density dari visualisasi diatas dapat kita lihat bahwa yes fire memiliki kecenderungan berada di jumlah Raw Ethanol sekitar 19500 - 20500 dan no fire memiliki kecenderungan berada di jumlah Raw Ethanol sekitar 20000 - 21000
 
 - Untuk melihat korelasi antara tiap feature:
  ```
@@ -194,8 +194,7 @@ plt.figure(figsize = (12,12))
 sns.heatmap(df.corr(),annot = True,cmap = 'GnBu')
 plt.show()
 ```
-> Semua column 'PM's dan 'NC's memiliki korelasi yang tinggi dengan sesama kolom tersebut.
-> Tidak ada feature yang berkorelasi tinggi dengan feature target. Humidity, Pressure dan Raw H2 adalah feature yang memiliki korelasi positif namun tidak tinggi dan sisanya adalah feature yang berkorelasi rendah dengan feature targetnya.
+> Semua column 'PM's dan 'NC's memiliki korelasi yang tinggi dengan sesama kolom tersebut dan Tidak ada feature yang berkorelasi tinggi dengan feature target. Humidity, Pressure dan Raw H2 adalah feature yang memiliki korelasi positif namun tidak tinggi dan sisanya adalah feature yang berkorelasi rendah dengan feature targetnya.
 
 
 ## Data Preparation

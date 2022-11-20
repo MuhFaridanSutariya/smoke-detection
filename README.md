@@ -151,6 +151,7 @@ Percent = (df.isnull().sum()*100/df.isnull().count()).sort_values(ascending=Fals
 missing_data = pd.concat([Total, Percent], axis = 1, keys = ['Total', 'Percentage of Missing Values'])    
 missing_data
 ```
+![hasil 5 data teratas](img/7.jpg)
 > Tidak terdapat missing value pada dataset kita.
 
 Untuk melihat outliers pada dataset kita: 
@@ -162,6 +163,11 @@ for i, col in enumerate(cols):
   sns.boxplot(x=df[col])
   plt.show()
 ```
+![hasil 5 data teratas](img/8.jpg)
+![hasil 5 data teratas](img/9.jpg)
+![hasil 5 data teratas](img/10.jpg)
+![hasil 5 data teratas](img/11.jpg)
+![hasil 5 data teratas](img/12.jpg)
 > Dengan melihat konsistensi nilai-nilai outlier dapat diartikan bahwa hal tersebut bukan karena kesalahan manusia saat menghitung.
 
 ### Exploratory Data Analysis - Univariate Analysis:

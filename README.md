@@ -127,6 +127,7 @@ Melakukan pengecekkan deskripsi statistik pada dataset kita untuk mengetahui apa
 ```
 df.describe()
 ```
+![hasil 5 data teratas](img/6.jpg)
 > Tidak ada keanehan dari basic stats diatas.
 
 Fungsi describe() memberikan informasi statistik pada masing-masing kolom, antara lain:

@@ -361,5 +361,5 @@ Penjelasan dari formula diatas:
 
 Recall adalah salah satu metric dari kasus classification yang lebih fokus untuk memprediksi asap dalam ruangan tersebut padahal tidak ada asap. dibandingkan model kita memprediksi tidak ada asap dalam ruangan tersebut padahal terdapat asap. tentu akan sangat fatal jika kita memilih model kita fokus memprediksi tidak ada asap dalam ruangan tersebut padahal terdapat asap, karena jika asap yang keluar adalah potensi dari kebakaran maka hal tersebut dapat berbahaya bagi orang yang ada didalam ruangan tersebut.
 
-**---Ini adalah bagian akhir laporan---**
+**---END---**
 

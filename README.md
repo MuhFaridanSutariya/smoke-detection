@@ -102,11 +102,11 @@ Exploratory data analysis atau sering disingkat EDA merupakan proses investigasi
 
 Cakupan proses EDA sangat luas. Namun, secara umum, Anda dapat melakukan proses EDA untuk menjawab beberapa pertanyaan berikut:
 
-  - Apa saja jenis variabel pada dataset?
-  - Bagaimana distribusi variabel dalam dataset?
-  - Apakah ada missing value?
-  - Apakah ada fitur yang tidak berguna (redundant)?
-  - Bagaimana korelasi antara fitur dan target?
+1. Apa saja jenis variabel pada dataset?
+2. Bagaimana distribusi variabel dalam dataset?
+3. Apakah ada missing value?
+4. Apakah ada fitur yang tidak berguna (redundant)?
+5. Bagaimana korelasi antara fitur dan target?
 
 - Melakukan pengecekkan informasi pada tiap variabel pada dataset kita: 
 ```

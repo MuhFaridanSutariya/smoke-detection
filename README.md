@@ -108,18 +108,51 @@ Cakupan proses EDA sangat luas. Namun, secara umum, Anda dapat melakukan proses 
 4. Apakah ada fitur yang tidak berguna (redundant)?
 5. Bagaimana korelasi antara fitur dan target?
 
+
 - Melakukan pengecekkan informasi pada tiap variabel pada dataset kita: 
 ```
 df.info()
 ```
 > Seluruh feature pada dataset kita bertipe numeric.
+
 - Melakukan pengecekkan deskripsi statistik pada dataset kita untuk mengetahui apakah terdapat anomalies:
 ```
 df.describe()
 ```
+> Tidak ada keanehan dari basic stats diatas.
 
+Fungsi describe() memberikan informasi statistik pada masing-masing kolom, antara lain:
+
+1. Count  adalah jumlah sampel pada data.
+2. Mean adalah nilai rata-rata.
+3. Std adalah standar deviasi.
+4. Min yaitu nilai minimum setiap kolom. 
+5. 25% adalah kuartil pertama. Kuartil adalah nilai yang menandai batas interval dalam empat bagian sebaran yang sama. 
+6. 50% adalah kuartil kedua, atau biasa juga disebut median (nilai tengah).
+7. 75% adalah kuartil ketiga.
+8. Max adalah nilai maksimum.
 
 ### Exploratory Exploratory Data Analysis - Menangani Missing Value dan Outliers:
+- Untuk Melihat missing value pada dataset kita:
+```
+Total = df.isnull().sum().sort_values(ascending=False)          
+
+Percent = (df.isnull().sum()*100/df.isnull().count()).sort_values(ascending=False)   
+
+missing_data = pd.concat([Total, Percent], axis = 1, keys = ['Total', 'Percentage of Missing Values'])    
+missing_data
+```
+> Tidak terdapat missing value pada dataset kita.
+
+- Untuk melihat outliers pada dataset kita: 
+```
+cols = df.columns
+for i, col in enumerate(cols):
+  print("Column:",col)
+  plt.figure()
+  sns.boxplot(x=df[col])
+  plt.show()
+```
 
 ### Exploratory Data Analysis - Univariate Analysis:
 

@@ -288,6 +288,8 @@ princ_comp = pca.transform(df[['PM1.0', 'PM2.5', 'NC0.5', 'NC1.0','NC2.5']])
 ```
 pca.explained_variance_ratio_.round(3)
 ```
+![hasil 5 data teratas](img/23.jpg)
+
 > Arti dari output di atas adalah, 0.9% informasi pada kelima fitur 'PM1.0', 'PM2.5', 'NC0.5', 'NC1.0' dan 'NC2.5' terdapat pada PC pertama. Sedangkan sisanya, sebesar 0.1%, 0.0%, 0.0% dan 0.0% terdapat pada PC kedua, ketiga, keempat dan kelima.
 
 Dari hasil diatas kita dapat mempertahankan PC pertama saja untuk menggantikan kelima feature yang telah direduksi sebelumnya lalu kita beri nama feature ini dengan 'dimension'
@@ -297,7 +299,11 @@ pca = PCA(n_components=1, random_state=42)
 pca.fit(df[['PM1.0', 'PM2.5', 'NC0.5', 'NC1.0','NC2.5']])
 df['dimension'] = pca.transform(df.loc[:, ('PM1.0', 'PM2.5', 'NC0.5', 'NC1.0','NC2.5')]).flatten()
 df.drop(['PM1.0', 'PM2.5', 'NC0.5', 'NC1.0','NC2.5'], axis=1, inplace=True)
+df.head()
 ```
+
+![hasil 5 data teratas](img/24.jpg)
+
 
 ### Pembagian dataset
 
@@ -327,6 +333,8 @@ print(f'Total # of sample in whole dataset: {len(X)}')
 print(f'Total # of sample in train dataset: {len(X_train)}')
 print(f'Total # of sample in test dataset: {len(X_test)}')
 ```
+
+![hasil 5 data teratas](img/25.jpg)
 
 ### Standarisasi
 Setelah melakukan split data ke dalam data train dan data test, Selanjutnya adalah melakukan data scaling, Karena value pada tiap feature memiliki angka yang signifikan dan hal itu dapat mengakibatkan model dari machine learning kita kesulitan dalam mencari polanya sehingga kita dapat menyeragamkan value tersebut kedalam rentang -1 to 1 menggunakan StandardScaler pada library sklearn.

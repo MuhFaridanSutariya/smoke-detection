@@ -240,6 +240,7 @@ plt.figure(figsize = (12,12))
 sns.heatmap(df.corr(),annot = True,cmap = 'GnBu')
 plt.show()
 ```
+![hasil 5 data teratas](img/19.png)
 - Semua column 'PM's dan 'NC's memiliki korelasi yang tinggi dengan sesama kolom tersebut
 - Tidak ada feature yang berkorelasi tinggi dengan feature target. Humidity, Pressure dan Raw H2 adalah feature yang memiliki korelasi positif namun tidak tinggi dan sisanya adalah feature yang berkorelasi rendah dengan feature targetnya.
 

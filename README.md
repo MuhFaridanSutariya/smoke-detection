@@ -362,7 +362,7 @@ Kelebihan Logistic Regression:
 
 Kekurangan Logistic Regression: 
 - Pada data dengan high dimensional akan memiliki kecenderungan overfitting, salah satu cara untuk menghindari hal tersebut adalah dengan melakukan regularization akan tetapi hal tersebut dapat menambah kompleksitas dari model yang akan dihasilkan
-- Permasalahan non-linear sulit untuk diselesaikan menggunakan logistic regression dikarenakan memiliki linear decision surface.
+- Permasalahan non-linear sulit untuk diselesaikan menggunakan logistic regression dikarenakan algoritma tersebut memiliki linear decision surface.
 
 Selanjutnya kita Mendefine sebuah object dari LogisticRegression dan beberapa parameter yang akan kita lakukan hyperparameter tuning untuk mendapatkan parameter terbaik pada case kita. 
 

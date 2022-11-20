@@ -271,6 +271,7 @@ df = df.drop(columns='UTC')
 ![hasil 5 data teratas](img/21.jpg)
 
 ### Principal Component Analysis (PCA)
+![hasil 5 data teratas](img/22.jpg)
 PCA bekerja menggunakan metode aljabar linier. Ia mengasumsikan bahwa sekumpulan data pada arah dengan varians terbesar merupakan yang paling penting (utama). PCA umumnya digunakan ketika variabel dalam data memiliki korelasi yang tinggi. Korelasi tinggi ini menunjukkan data yang berulang atau redundant.
 
 Berdasarkan visualisasi korelasi diatas kita akan melakukan PCA pada feature PM1.0, PM2.5, NC0.5, NC1.0 dan NC2.5.

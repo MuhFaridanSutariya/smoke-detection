@@ -53,7 +53,7 @@ Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:
 - Fire Alarm: 1 means Positive and 0 means Not Positive
 
 ### Data Loading:
-- Langkah pertama import library yang kita butuhkan untuk kasus kali ini dan juga import datasetnya sekaligus menampilkan 5 data teratas:
+- Langkah pertama import library yang kita butuhkan untuk kasus kali ini:
 ```
 # libraries for data manipulation and calculation math
 import numpy as np
@@ -86,6 +86,7 @@ import seaborn as sns
 import warnings
 warnings.filterwarnings('ignore')
 ```
+- Selanjutnya import dataset dan menampilkan 5 data teratas:
 ```
 df = pd.read_csv('/content/smoke_detection_iot.csv',index_col = False)
 df.head()

@@ -120,14 +120,14 @@ Melakukan pengecekkan informasi pada tiap variabel pada dataset kita:
 ```
 df.info()
 ```
-![hasil 5 data teratas](img/5.jpg)
+![5](https://user-images.githubusercontent.com/88027268/203011977-257ab80d-f659-45b0-a0ac-479b8e9d8ee0.jpg)
 > Seluruh feature pada dataset kita bertipe numeric.
 
 Melakukan pengecekkan deskripsi statistik pada dataset kita untuk mengetahui apakah terdapat anomalies:
 ```
 df.describe()
 ```
-![hasil 5 data teratas](img/6.jpg)
+![6](https://user-images.githubusercontent.com/88027268/203012023-bd10d1c8-0334-47d3-a537-d538b52f7379.jpg)
 > Tidak ada keanehan dari basic stats diatas.
 
 Fungsi describe() memberikan informasi statistik pada masing-masing kolom, antara lain:
@@ -151,7 +151,7 @@ Percent = (df.isnull().sum()*100/df.isnull().count()).sort_values(ascending=Fals
 missing_data = pd.concat([Total, Percent], axis = 1, keys = ['Total', 'Percentage of Missing Values'])    
 missing_data
 ```
-![hasil 5 data teratas](img/7.jpg)
+![7](https://user-images.githubusercontent.com/88027268/203012078-75fde3d1-5d66-457a-8bb7-21dc021897ad.jpg)
 > Tidak terdapat missing value pada dataset kita.
 
 Untuk melihat outliers pada dataset kita: 
@@ -162,11 +162,11 @@ for i, col in enumerate(cols):
   sns.boxplot(x=df[col])
   plt.show()
 ```
-![hasil 5 data teratas](img/8.jpg)
-![hasil 5 data teratas](img/9.jpg)
-![hasil 5 data teratas](img/10.jpg)
-![hasil 5 data teratas](img/11.jpg)
-![hasil 5 data teratas](img/12.jpg)
+![8](https://user-images.githubusercontent.com/88027268/203012132-ca1b43c3-1202-4ecb-b1f6-f0d366029902.jpg)
+![9](https://user-images.githubusercontent.com/88027268/203012160-f8eb630f-6770-4f48-baf0-7fae887c03b1.jpg)
+![10](https://user-images.githubusercontent.com/88027268/203012189-b189c06d-6701-40bd-b466-e4561e06a474.jpg)
+![11](https://user-images.githubusercontent.com/88027268/203012218-724f7176-142e-428f-b095-fd845096f658.jpg)
+![12](https://user-images.githubusercontent.com/88027268/203012254-f7c28332-b38a-4507-8ca1-3517aa0071b5.jpg)
 > Dengan melihat konsistensi nilai-nilai outlier dapat diartikan bahwa hal tersebut bukan karena kesalahan manusia saat menghitung.
 
 ### Exploratory Data Analysis - Univariate Analysis:
@@ -182,7 +182,7 @@ layout = dict(title =  'Distribution of Fire Alarm variable')
 fig = dict(data = [trace], layout=layout)
 py.iplot(fig)
 ```
-![hasil 5 data teratas](img/13.png)
+![13](https://user-images.githubusercontent.com/88027268/203012313-e90c3936-0252-4286-88e2-24e833ddd769.png)
 Terjadi data imbalance pada variabel target. kita dapat melakukan pendekatan undersampling dan uppersampling pada variabel target atau dengan cara lain yaitu memilih metric yang tepat seperti recall, precision dan F1 Score. kita tidak dapat menggunakan metric akurasi karena dapat menyebabkan bias pada saat scoring model.
 
 ### Exploratory Data Analysis - Multivariate Analysis:
@@ -194,8 +194,8 @@ plt.legend(loc='upper left', labels=['no fire', 'yes fire'])
 plt.title('Humidity vs Fire density')
 plt.show()
 ```
-![hasil 5 data teratas](img/14.png)
-   > Selama experiment kemungkinan fire alarm ditempat yang memiliki kelembapan cukup tinggi. karena puncak density pada visualisasi diatas mencakup kelembapan > 40%
+![14](https://user-images.githubusercontent.com/88027268/203012378-5e964184-d1d6-45c9-a4b2-6c03ff518b0b.png)
+> Selama experiment kemungkinan fire alarm ditempat yang memiliki kelembapan cukup tinggi. karena puncak density pada visualisasi diatas mencakup kelembapan > 40%
 ```
 plt.figure(figsize=(15,5))
 sns.kdeplot( data=df, x='Temperature[C]', hue='Fire Alarm', fill = True)
@@ -203,8 +203,8 @@ plt.legend(loc='upper left', labels=['no fire', 'yes fire'])
 plt.title('Temperature vs Fire density')
 plt.show()
 ```
-![hasil 5 data teratas](img/15.png)
-   > Selama experiment kemungkinan fire alarm ditempat yang memiliki temperature sekitar 20 celcius
+![15](https://user-images.githubusercontent.com/88027268/203012429-d73bc0cc-2430-48be-9b13-d85fb0520b05.png)
+> Selama experiment kemungkinan fire alarm ditempat yang memiliki temperature sekitar 20 celcius
 ```
 plt.figure(figsize=(15,5))
 sns.kdeplot( data=df, x='Pressure[hPa]', hue='Fire Alarm', fill = True)
@@ -212,8 +212,8 @@ plt.legend(loc='upper left', labels=['no fire', 'yes fire'])
 plt.title('Pressure vs Fire density')
 plt.show()
 ```
-![hasil 5 data teratas](img/16.png)
-   > Berdasarkan puncak density dari visualisasi diatas dapat kita lihat bahwa semakin tinggi Pressure maka kemungkinan untuk fire alarm berbunyi semakin besar juga
+![16](https://user-images.githubusercontent.com/88027268/203012552-edf1b456-3842-4f82-99d6-9fc148f003fd.png)
+> Berdasarkan puncak density dari visualisasi diatas dapat kita lihat bahwa semakin tinggi Pressure maka kemungkinan untuk fire alarm berbunyi semakin besar juga
 ```
 plt.figure(figsize=(15,5))
 sns.kdeplot( data=df, x='Raw H2', hue='Fire Alarm', fill = True)
@@ -221,8 +221,8 @@ plt.legend(loc='upper left', labels=['no fire', 'yes fire'])
 plt.title('Raw H2 vs Fire density')
 plt.show()
 ```
-![hasil 5 data teratas](img/17.png)
-   > Berdasarkan puncak density dari visualisasi diatas dapat kita lihat bahwa yes fire dan no fire memiliki rentang yang serupa yaitu 12500 - 1340
+![17](https://user-images.githubusercontent.com/88027268/203012750-ae9d8d1d-246f-4b93-9de5-87a05891b00c.png)
+> Berdasarkan puncak density dari visualisasi diatas dapat kita lihat bahwa Raw H2 pada yes fire dan no fire memiliki rentang yang serupa yaitu 12500 - 1340
 ```
 plt.figure(figsize=(15,5))
 sns.kdeplot( data=df, x='Raw Ethanol', hue='Fire Alarm', fill = True)
@@ -230,8 +230,8 @@ plt.legend(loc='upper left', labels=['no fire', 'yes fire'])
 plt.title('Raw Ethanol vs Fire density')
 plt.show()
 ```
-![hasil 5 data teratas](img/18.png)
-   > Berdasarkan puncak density dari visualisasi diatas dapat kita lihat bahwa yes fire memiliki kecenderungan berada di jumlah Raw Ethanol sekitar 19500 - 20500 dan no fire memiliki kecenderungan berada di jumlah Raw Ethanol sekitar 20000 - 21000
+![18](https://user-images.githubusercontent.com/88027268/203012805-be948f4d-9b96-4978-92cd-d35da0cdb0ce.png)
+> Berdasarkan puncak density dari visualisasi diatas dapat kita lihat bahwa yes fire memiliki kecenderungan berada di jumlah Raw Ethanol sekitar 19500 - 20500 dan no fire memiliki kecenderungan berada di jumlah Raw Ethanol sekitar 20000 - 21000
 
 Untuk melihat korelasi antara tiap feature:
  ```
@@ -239,12 +239,12 @@ plt.figure(figsize = (12,12))
 sns.heatmap(df.corr(),annot = True,cmap = 'GnBu')
 plt.show()
 ```
-![hasil 5 data teratas](img/19.png)
+![19](https://user-images.githubusercontent.com/88027268/203012863-b8347aed-42c5-486e-8851-e547ef663457.png)
 - Semua column 'PM's dan 'NC's memiliki korelasi yang tinggi dengan sesama kolom tersebut
 - Tidak ada feature yang berkorelasi tinggi dengan feature target. Humidity, Pressure dan Raw H2 adalah feature yang memiliki korelasi positif namun tidak tinggi dan sisanya adalah feature yang berkorelasi rendah dengan feature targetnya.
 
 ## Data Preparation
-![hasil 5 data teratas](img/22.jpg)
+![22](https://user-images.githubusercontent.com/88027268/203012905-826bd461-2a07-43c8-b63b-129c621f49aa.jpg)
 
 Pada bagian ini kita akan melakukan empat tahap persiapan data, yaitu:
 
@@ -262,14 +262,14 @@ for col in df.columns.tolist():
     print(df[col].value_counts().count())
     print('\n')
 ```
-![hasil 5 data teratas](img/20.jpg)
+![20](https://user-images.githubusercontent.com/88027268/203013002-6875dab8-de7e-455c-8147-8fa6cc0175d7.jpg)
 > Tidak ada feature dengan satu nilai saja maka tidak ada feature yang harus dibuang. 
 
 - menghapus kolom UTC karena tidak berpengaruh pada model machine learning sehingga hal ini dapat memudahkan machine learning dalam pencari pola dari dataset kita.
 ```
 df = df.drop(columns='UTC')
 ```
-![hasil 5 data teratas](img/21.jpg)
+![21](https://user-images.githubusercontent.com/88027268/203013168-139011c7-1197-449e-a8c3-90ad5bb1833a.jpg)
 
 ### Principal Component Analysis (PCA)
 PCA bekerja menggunakan metode aljabar linier. Ia mengasumsikan bahwa sekumpulan data pada arah dengan varians terbesar merupakan yang paling penting (utama). PCA umumnya digunakan ketika variabel dalam data memiliki korelasi yang tinggi. Korelasi positif yang tinggi ini menunjukkan data yang berulang atau redundant.
@@ -287,7 +287,7 @@ princ_comp = pca.transform(df[['PM1.0', 'PM2.5', 'NC0.5', 'NC1.0','NC2.5']])
 ```
 pca.explained_variance_ratio_.round(3)
 ```
-![hasil 5 data teratas](img/23.jpg)
+![23](https://user-images.githubusercontent.com/88027268/203013240-27bb6097-ed9f-48b6-8804-f3957fc4e6c5.jpg)
 
 > Arti dari output di atas adalah, 0.9% informasi pada kelima fitur 'PM1.0', 'PM2.5', 'NC0.5', 'NC1.0' dan 'NC2.5' terdapat pada PC pertama. Sedangkan sisanya, sebesar 0.1%, 0.0%, 0.0% dan 0.0% terdapat pada PC kedua, ketiga, keempat dan kelima.
 
@@ -300,9 +300,7 @@ df['dimension'] = pca.transform(df.loc[:, ('PM1.0', 'PM2.5', 'NC0.5', 'NC1.0','N
 df.drop(['PM1.0', 'PM2.5', 'NC0.5', 'NC1.0','NC2.5'], axis=1, inplace=True)
 df.head()
 ```
-
-![hasil 5 data teratas](img/24.jpg)
-
+![24](https://user-images.githubusercontent.com/88027268/203013279-8120c2e2-af49-4f8b-a921-5e6ac4c57ff2.jpg)
 
 ### Pembagian dataset
 
@@ -332,8 +330,7 @@ print(f'Total # of sample in whole dataset: {len(X)}')
 print(f'Total # of sample in train dataset: {len(X_train)}')
 print(f'Total # of sample in test dataset: {len(X_test)}')
 ```
-
-![hasil 5 data teratas](img/25.jpg)
+![25](https://user-images.githubusercontent.com/88027268/203013445-03989581-8cbc-46d1-aca2-4e6790919661.jpg)
 
 ### Standarisasi
 Setelah melakukan split data ke dalam data train dan data test, Selanjutnya adalah melakukan data scaling, Karena value pada tiap feature memiliki angka yang signifikan dan hal itu dapat mengakibatkan model dari machine learning kita kesulitan dalam mencari polanya sehingga kita dapat menyeragamkan value tersebut kedalam rentang -1 to 1 menggunakan StandardScaler pada library sklearn.
@@ -356,8 +353,9 @@ Kelebihan Logistic Regression:
 - Ketika terjadi overfitting pada algoritma Logistic Regression kita dapat menggunakan parameter regularisasi (L1 dan L2) untuk menghindari overfitting.
 - Tidak memerlukan spek device yang tinggi untuk melakukan training pada algoritma logistic regression.
 - bagus Ketika digunakan pada masalah binary classification.
+![28](https://user-images.githubusercontent.com/88027268/203013536-b121a5af-d08e-4d31-8113-b1f5b0ab3842.png)
 
-![hasil 5 data teratas](img/28.png)
+
 
 Kekurangan Logistic Regression: 
 - Pada data dengan high dimensional akan memiliki kecenderungan overfitting, salah satu cara untuk menghindari hal tersebut adalah dengan melakukan regularization akan tetapi hal tersebut dapat menambah kompleksitas dari model yang akan dihasilkan
@@ -377,7 +375,7 @@ penjelasan dari setiap parameter:
 - C_values adalah nilai dari regularization yang kita gunakan, semakin kecil semakin memanandakan regularization yang kita lakukan semakin kuat. gunanya adalah untuk menghindari overfitting.
 - penalty adalah bentuk regularization dari nilai yang telah kita specify sebelumnya pada c_values. terdapat beberapa jenis penalty yang dapat kita kombinasikan sehingga mendapat hasil yang maksimal:
 
-![hasil 5 data teratas](img/26.png)
+![26](https://user-images.githubusercontent.com/88027268/203013609-a92a08d2-1212-4285-b44c-44d6a8894e0c.png)
 
 Selanjutnya adalah melakukan hyperparameter tuning menggunakan GridSearchCV. GridSearchCV adalah metode pemilihan kombinasi model dan hyperparameter dengan cara menguji coba satu persatu kombinasi dan melakukan validasi untuk setiap kombinasi. Tujuannya adalah menentukan kombinasi yang menghasilkan performa model terbaik yang dapat dipilih untuk dijadikan model untuk prediksi.
 
@@ -393,7 +391,7 @@ penjelasan dari parameter yang kita gunakan:
 - n_jobs adalah jumlah dari processor yang akan kita gunakan untuk nge running jobs tersebut secara parallel. value -1 berarti kita nge running jobs tersebut menggunakan seluruh dari processor yang kita punya.
 - cv adalah cross-validation generator yang dimana kita menentukan ingin melakukan berapa kali percobaan secara acak pada dataset kita. illustrasi:
 
-![hasil 5 data teratas](img/27.jpg)
+![27](https://user-images.githubusercontent.com/88027268/203013656-faaed348-1013-4cee-b577-d5ff7595db59.jpg)
 
 ## Evaluation
 Menampilkan hasil dari prediksi berupa score dari setiap kombinasi parameter yang kita lakukan tuning sebelumnya.
@@ -410,13 +408,13 @@ for mean, stdev, param in zip(means, stds, params):
     print("%f (%f) with: %r" % (mean, stdev, param))
 ```
 
-![hasil 5 data teratas](img/29.jpg)
+![29](https://user-images.githubusercontent.com/88027268/203013702-509ae813-bb35-4022-b4da-11dae76e044d.jpg)
 
 Alhamdulillah, kita mendapat score dari metric recall yang sangat baik yaitu 96% namun score ini masih dapat kita improve menggunakan beberapa cara yaitu feature importance, melakukan feature engineering dan menggunakan parameter lebih banyak lagi untuk di hyperparameter tuning.
 
 metric yang kita gunakan pada kasus ini adalah: Recall, karena kita menginginkan hasil dari False Negative(FN) sekecil mungkin sehingga kita akan menggunakan recall sebagai metric patokan pada kasus ini. konsep dari recall ini sebagai berikut:
 
-![hasil 5 data teratas](img/30.png)
+![30](https://user-images.githubusercontent.com/88027268/203013738-512a8d0f-0d53-4b3b-8e8b-a5ada054d859.png)
 
 Penjelasan dari formula diatas:
 - True Positve berarti model machine learning kita berhasil memprediksi bahwa ditempat tersebut terdapat asap dan memang terdapat asap di tempat tersebut.
@@ -424,6 +422,6 @@ Penjelasan dari formula diatas:
 
 Recall adalah salah satu metric dari kasus classification yang lebih fokus untuk memprediksi asap dalam ruangan tersebut padahal tidak ada asap. dibandingkan model kita memprediksi tidak ada asap dalam ruangan tersebut padahal terdapat asap. tentu akan sangat fatal jika kita memilih model kita fokus memprediksi tidak ada asap dalam ruangan tersebut padahal terdapat asap, karena jika asap yang keluar adalah potensi dari kebakaran maka hal tersebut dapat berbahaya bagi orang yang ada didalam ruangan tersebut.
 
-**---END---**
-
 Link github repo: https://github.com/MuhFaridanSutariya/smoke-detection
+
+**---END---**

@@ -35,7 +35,7 @@ Menjelaskan tujuan dari pernyataan masalah:
 ## Data Understanding
 Link download dataset: https://www.kaggle.com/datasets/deepcontractor/smoke-detection-dataset
 
-Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
+Selanjutnya saya akan menguraikan seluruh variabel atau fitur pada data. Sebagai berikut:  
 
 ### Variabel-variabel pada dataset Smoke detection adalah sebagai berikut:
 - UTC: Time when experiment was performed
@@ -350,7 +350,7 @@ Kita akan lakukan training pada data train dan melakukan predict pada data test 
 
 Logistic Regression hampir mirip dengan Linear Regression, memiliki kemiripan yaitu sama-sama memiliki garis regresi. Salah satu yang membedakan adalah Logistic Regression digunakan untuk menentukan prediksi yang kita buat benar atau salah sedangkan Linear Regression digunakan untuk memprediksi nilai yang kontinu.
 
-Kenapa saya menggunakan Logistic Regression? ini dikarenakan alogritma model ini sangat baik bahkan memang keahliannya dalam menangani kasus binary classification.
+Kenapa saya menggunakan Logistic Regression? ini dikarenakan alogritma model ini sangat cocok ketika kasus binary classification.
 
 Kelebihan Logistic Regression:
 - Ketika terjadi overfitting pada algoritma Logistic Regression kita dapat menggunakan parameter regularisasi (L1 dan L2) untuk menghindari overfitting.

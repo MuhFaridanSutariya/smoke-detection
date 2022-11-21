@@ -1,6 +1,6 @@
 # Smoke detection
 
-![smoking](img/4.jpeg)
+![4](https://user-images.githubusercontent.com/88027268/203010892-b35284b1-4779-4764-923b-6b94c065a446.jpeg)
 
 ## Domain Proyek
 
@@ -17,7 +17,7 @@ Pada bagian ini, Saya akan menjelaskan proses klarifikasi masalah.
 
 ### Problem Statements
 
-![smoking](img/1.png)
+<img width="960" alt="1" src="https://user-images.githubusercontent.com/88027268/203011051-26a43e4f-4235-467b-9dda-4213f07b131d.png">
 
 Menjelaskan pernyataan masalah latar belakang:
 - Masyarakat indonesia yang merokok disembarang tempat tanpa memperdulikan sekitar.
@@ -93,13 +93,13 @@ Selanjutnya import dataset dan menampilkan 5 data teratas:
 df = pd.read_csv('/content/smoke_detection_iot.csv',index_col = False)
 df.head()
 ```
-![hasil 5 data teratas](img/2.jpg)
+![2](https://user-images.githubusercontent.com/88027268/203011310-8949aef0-47f6-41f8-9ca7-ea5e55dce182.jpg)
 Kita dapat menghapus feature 'Unnamed: 0' Kemudian melihat dimensi dari dataset ini:
 ```
 df = df.drop(columns='Unnamed: 0')
 print("Row: {}, Columns: {}".format(df.shape[0], df.shape[1]))
 ```
-![hasil 5 data teratas](img/3.jpg)
+![3](https://user-images.githubusercontent.com/88027268/203011353-91f2f557-8737-4427-8106-575c485db4dd.jpg)
 
 
 Dataset ini terdiri dari 62630 data dan 10 columns. seluruh data dari dataset bertipe numeric.

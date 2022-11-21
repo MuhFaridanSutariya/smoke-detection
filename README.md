@@ -426,3 +426,4 @@ Recall adalah salah satu metric dari kasus classification yang lebih fokus untuk
 
 **---END---**
 
+Link github repo: https://github.com/MuhFaridanSutariya/smoke-detection

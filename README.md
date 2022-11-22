@@ -129,18 +129,23 @@ Terjadi data *imbalance* pada variabel target. Permasalahan tersebut dapat disel
 ### Exploratory Data Analysis - Multivariate Analysis:
 Melihat *kernel density estimation* (KDE) plot dari tiap variabel:
 
+Melihat hubungan humidity dengan variabel target menggunakan KDE
 ![14](https://user-images.githubusercontent.com/88027268/203012378-5e964184-d1d6-45c9-a4b2-6c03ff518b0b.png)
 > Selama *experiment* kemungkinan *fire alarm* ditempat yang memiliki kelembapan cukup tinggi. karena puncak *density* pada visualisasi diatas mencakup kelembapan > 40%
 
+Melihat hubungan temperature dengan variabel target menggunakan KDE
 ![15](https://user-images.githubusercontent.com/88027268/203012429-d73bc0cc-2430-48be-9b13-d85fb0520b05.png)
 > Selama *experiment* kemungkinan *fire alarm* ditempat yang memiliki *temperature* sekitar 20 celcius
 
+Melihat hubungan Pressure dengan variabel target menggunakan KDE
 ![16](https://user-images.githubusercontent.com/88027268/203012552-edf1b456-3842-4f82-99d6-9fc148f003fd.png)
 > Berdasarkan puncak *density* dari visualisasi diatas dikita lihat bahwa semakin tinggi *Pressure* maka kemungkinan untuk *fire alarm* berbunyi semakin besar juga
 
+Melihat hubungan Raw H2 dengan variabel target menggunakan KDE
 ![17](https://user-images.githubusercontent.com/88027268/203012750-ae9d8d1d-246f-4b93-9de5-87a05891b00c.png)
 > Berdasarkan puncak *density* dari visualisasi diatas dapat dilihat bahwa *Raw H2* pada *yes fire* dan *no fire* memiliki rentang yang serupa yaitu 12500 - 1340
 
+Melihat hubungan Raw Ethanol dengan variabel target menggunakan KDE
 ![18](https://user-images.githubusercontent.com/88027268/203012805-be948f4d-9b96-4978-92cd-d35da0cdb0ce.png)
 > Berdasarkan puncak *density* dari visualisasi diatas dapat dilihat bahwa *yes fire* memiliki kecenderungan berada di jumlah *Raw Ethanol* sekitar 19500 - 20500 dan *no fire* memiliki kecenderungan berada di jumlah *Raw Ethanol* sekitar 20000 - 21000
 

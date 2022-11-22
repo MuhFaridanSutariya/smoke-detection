@@ -371,11 +371,9 @@ c_values = [100, 10, 1.0, 0.1, 0.01]
 ```
 penjelasan dari setiap parameter:
 
-- solvers adalah optimizer dari algoritma yang akan kita gunakan sebagai method untuk mencari loss terkecil dari gradient descent
+- solvers adalah optimizer dari algoritma yang akan kita gunakan sebagai method untuk mencari loss terkecil dari gradient descent. terdapat beberapa solvers yang dapat digunakan seperti newton-cg, lbfgs, liblinear, sag dan saga. Secara default akan menggunakan lbfgs.
 - C_values adalah nilai dari regularization yang kita gunakan, semakin kecil semakin memanandakan regularization yang kita lakukan semakin kuat. gunanya adalah untuk menghindari overfitting.
-- penalty adalah bentuk regularization dari nilai yang telah kita specify sebelumnya pada c_values. terdapat beberapa jenis penalty yang dapat kita kombinasikan sehingga mendapat hasil yang maksimal:
-
-![26](https://user-images.githubusercontent.com/88027268/203013609-a92a08d2-1212-4285-b44c-44d6a8894e0c.png)
+- penalty adalah bentuk regularization dari nilai yang telah kita specify sebelumnya pada c_values. terdapat beberapa jenis penalty yang dapat kita kombinasikan. seperti l1, l2 dan elasticnet.
 
 Selanjutnya adalah melakukan hyperparameter tuning menggunakan GridSearchCV. GridSearchCV adalah metode pemilihan kombinasi model dan hyperparameter dengan cara menguji coba satu persatu kombinasi dan melakukan validasi untuk setiap kombinasi. Tujuannya adalah menentukan kombinasi yang menghasilkan performa model terbaik yang dapat dipilih untuk dijadikan model untuk prediksi.
 
@@ -414,7 +412,9 @@ Alhamdulillah, kita mendapat score dari metric recall yang sangat baik yaitu 96%
 
 metric yang kita gunakan pada kasus ini adalah: Recall, karena kita menginginkan hasil dari False Negative(FN) sekecil mungkin sehingga kita akan menggunakan recall sebagai metric patokan pada kasus ini. konsep dari recall ini sebagai berikut:
 
-![30](https://user-images.githubusercontent.com/88027268/203013738-512a8d0f-0d53-4b3b-8e8b-a5ada054d859.png)
+```math
+Recall = \frac{True positive}{True positive + False Negative}
+```
 
 Penjelasan dari formula diatas:
 - True Positve berarti model machine learning kita berhasil memprediksi bahwa ditempat tersebut terdapat asap dan memang terdapat asap di tempat tersebut.

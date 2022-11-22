@@ -1,6 +1,7 @@
 # Smoke detection
 
 ![4](https://user-images.githubusercontent.com/88027268/203010892-b35284b1-4779-4764-923b-6b94c065a446.jpeg)
+Gambar 1. Illustrasi asap rokok
 
 ## Domain Proyek
 
@@ -15,6 +16,7 @@ Pada bagian ini, akan menjelaskan proses klarifikasi masalah.
 ### Problem Statements
 
 <img width="960" alt="1" src="https://user-images.githubusercontent.com/88027268/203011051-26a43e4f-4235-467b-9dda-4213f07b131d.png">
+Gambar 2. Illustrasi asap rokok
 
 Menjelaskan pernyataan masalah latar belakang:
 - Masyarakat indonesia yang merokok disembarang tempat tanpa memperdulikan sekitar.
@@ -68,7 +70,7 @@ Kita dapat menghapus fitur 'Unnamed: 0' Kemudian melihat dimensi dari dataset in
 print("Row: {}, Columns: {}".format(df.shape[0], df.shape[1]))
 ```
 ![3](https://user-images.githubusercontent.com/88027268/203011353-91f2f557-8737-4427-8106-575c485db4dd.jpg)
-
+Gambar 3. Dimensi dataset
 > Dataset ini terdiri dari 62630 data dan 10 columns.
 
 ### Exploratory Data Analysis - Deskripsi Variabel:
@@ -88,16 +90,20 @@ Melakukan pengecekkan informasi pada tiap variabel pada dataset:
 df.info()
 ```
 ![5](https://user-images.githubusercontent.com/88027268/203011977-257ab80d-f659-45b0-a0ac-479b8e9d8ee0.jpg)
+Gambar 4. Keterangan dari tiap fitur pada dataset
 > Seluruh fitur pada dataset kita bertipe numeric.
+
+
 
 Melakukan pengecekkan deskripsi statistik pada dataset untuk mengetahui apakah terdapat anomali:
 ```
 df.describe()
 ```
 ![6](https://user-images.githubusercontent.com/88027268/203012023-bd10d1c8-0334-47d3-a537-d538b52f7379.jpg)
+Gambar 5. Kalkulasi deskripsi statistik dari dataset 
 > Tidak ada keanehan dari deskripsi statistik diatas.
 
-*Function* describe() memberikan informasi statistik pada masing-masing kolom, antara lain:
+*Function describe()* memberikan informasi statistik pada masing-masing kolom, antara lain:
 
 1. *Count*  adalah jumlah sampel pada data.
 2. *Mean* adalah nilai rata-rata.
@@ -111,6 +117,7 @@ df.describe()
 ### Exploratory Exploratory Data Analysis - Menangani Missing Value dan Outliers:
 
 ![7](https://user-images.githubusercontent.com/88027268/203012078-75fde3d1-5d66-457a-8bb7-21dc021897ad.jpg)
+Gambar 5. Missing value pada dataset
 > Tidak terdapat missing value pada dataset.
 
 ![8](https://user-images.githubusercontent.com/88027268/203012132-ca1b43c3-1202-4ecb-b1f6-f0d366029902.jpg)
@@ -118,45 +125,56 @@ df.describe()
 ![10](https://user-images.githubusercontent.com/88027268/203012189-b189c06d-6701-40bd-b466-e4561e06a474.jpg)
 ![11](https://user-images.githubusercontent.com/88027268/203012218-724f7176-142e-428f-b095-fd845096f658.jpg)
 ![12](https://user-images.githubusercontent.com/88027268/203012254-f7c28332-b38a-4507-8ca1-3517aa0071b5.jpg)
+Gambar 6. Outlier pada dataset
 > Dengan melihat konsistensi nilai-nilai *outlier* dapat diartikan bahwa hal tersebut bukan karena kesalahan manusia saat menghitung.
 
 ### Exploratory Data Analysis - Univariate Analysis:
 Melihat proporsi dari nilai variabel target pada dataset:
 
 ![13](https://user-images.githubusercontent.com/88027268/203012313-e90c3936-0252-4286-88e2-24e833ddd769.png)
-Terjadi data *imbalance* pada variabel target. Permasalahan tersebut dapat diselesaikan dengan cara melakukan pendekatan *undersampling* dan *uppersampling* pada variabel target atau dengan cara lain yaitu memilih *metric* yang tepat seperti *recall*, *precision* dan *F1 Score*. Tidak dapat menggunakan *metric* *accuracy* karena dapat menyebabkan bias pada saat *scoring* model.
+Gambar 7. Proporsi pada fitur target
+
+> Terjadi data *imbalance* pada variabel target. Permasalahan tersebut dapat diselesaikan dengan cara melakukan pendekatan *undersampling* dan *uppersampling* pada variabel target atau dengan cara lain yaitu memilih *metric* yang tepat seperti *recall*, *precision* dan *F1 Score*. Tidak dapat menggunakan *metric* *accuracy* karena dapat menyebabkan bias pada saat *scoring* model.
 
 ### Exploratory Data Analysis - Multivariate Analysis:
 Melihat *kernel density estimation* (KDE) plot dari tiap variabel:
 
 Melihat hubungan humidity dengan variabel target menggunakan KDE
 ![14](https://user-images.githubusercontent.com/88027268/203012378-5e964184-d1d6-45c9-a4b2-6c03ff518b0b.png)
+Gambar 8. KDE Humidity vs Fire Alarm
 > Selama *experiment* kemungkinan *fire alarm* ditempat yang memiliki kelembapan cukup tinggi. karena puncak *density* pada visualisasi diatas mencakup kelembapan > 40%
+
 
 Melihat hubungan temperature dengan variabel target menggunakan KDE
 ![15](https://user-images.githubusercontent.com/88027268/203012429-d73bc0cc-2430-48be-9b13-d85fb0520b05.png)
+Gambar 9. KDE Temperature vs Fire Alarm
 > Selama *experiment* kemungkinan *fire alarm* ditempat yang memiliki *temperature* sekitar 20 celcius
 
 Melihat hubungan Pressure dengan variabel target menggunakan KDE
 ![16](https://user-images.githubusercontent.com/88027268/203012552-edf1b456-3842-4f82-99d6-9fc148f003fd.png)
+Gambar 10. KDE Pressure vs Fire Alarm
 > Berdasarkan puncak *density* dari visualisasi diatas dikita lihat bahwa semakin tinggi *Pressure* maka kemungkinan untuk *fire alarm* berbunyi semakin besar juga
 
 Melihat hubungan Raw H2 dengan variabel target menggunakan KDE
+Gambar 11. KDE Raw H2 vs Fire Alarm
 ![17](https://user-images.githubusercontent.com/88027268/203012750-ae9d8d1d-246f-4b93-9de5-87a05891b00c.png)
 > Berdasarkan puncak *density* dari visualisasi diatas dapat dilihat bahwa *Raw H2* pada *yes fire* dan *no fire* memiliki rentang yang serupa yaitu 12500 - 1340
 
 Melihat hubungan Raw Ethanol dengan variabel target menggunakan KDE
+Gambar 12. KDE Raw Ethanol vs Fire Alarm
 ![18](https://user-images.githubusercontent.com/88027268/203012805-be948f4d-9b96-4978-92cd-d35da0cdb0ce.png)
 > Berdasarkan puncak *density* dari visualisasi diatas dapat dilihat bahwa *yes fire* memiliki kecenderungan berada di jumlah *Raw Ethanol* sekitar 19500 - 20500 dan *no fire* memiliki kecenderungan berada di jumlah *Raw Ethanol* sekitar 20000 - 21000
 
 Melihat korelasi antara tiap fitur:
 
 ![19](https://user-images.githubusercontent.com/88027268/203012863-b8347aed-42c5-486e-8851-e547ef663457.png)
+Gambar 13. Korelasi ditiap fitur pada dataset
 - Semua kolom *'PM's* dan *'NC's* memiliki korelasi yang tinggi dengan sesama kolom tersebut
 - Tidak ada fitur yang berkorelasi tinggi dengan fitur target. *Humidity*, *Pressure* dan *Raw H2* adalah fitur yang memiliki korelasi positif namun tidak tinggi dan sisanya adalah fitur yang berkorelasi rendah dengan fitur targetnya.
 
 ## Data Preparation
 ![22](https://user-images.githubusercontent.com/88027268/203012905-826bd461-2a07-43c8-b63b-129c621f49aa.jpg)
+Gambar 14. Illustrasi Data Preparation
 
 Pada bagian ini terdapat empat tahap persiapan data, yaitu:
 
@@ -175,13 +193,13 @@ for col in df.columns.tolist():
     print('\n')
 ```
 ![20](https://user-images.githubusercontent.com/88027268/203013002-6875dab8-de7e-455c-8147-8fa6cc0175d7.jpg)
+Gambar 15. Distribusi value tiap fitur
 > Tidak ada fitur dengan satu nilai saja maka tidak ada fitur yang harus dibuang. 
 
 - menghapus kolom *UTC* karena tidak berpengaruh pada model *machine learning* sehingga hal ini dapat memudahkan *machine learning* dalam pencari pola dari dataset.
 ```
 df = df.drop(columns='UTC')
 ```
-![21](https://user-images.githubusercontent.com/88027268/203013168-139011c7-1197-449e-a8c3-90ad5bb1833a.jpg)
 
 ### Principal Component Analysis (PCA)
 *PCA* bekerja menggunakan metode aljabar linier. Ia mengasumsikan bahwa sekumpulan data pada arah dengan *varians* terbesar merupakan yang paling penting (utama). *PCA* umumnya digunakan ketika variabel dalam data memiliki korelasi yang tinggi. Korelasi positif yang tinggi ini menunjukkan data yang berulang atau *redundant*.
@@ -200,6 +218,7 @@ princ_comp = pca.transform(df[['PM1.0', 'PM2.5', 'NC0.5', 'NC1.0','NC2.5']])
 pca.explained_variance_ratio_.round(3)
 ```
 ![23](https://user-images.githubusercontent.com/88027268/203013240-27bb6097-ed9f-48b6-8804-f3957fc4e6c5.jpg)
+Gambar 16. Hasil PCA
 
 > Arti dari *output* di atas adalah, 0.9% informasi pada kelima fitur *'PM1.0', 'PM2.5', 'NC0.5', 'NC1.0' dan 'NC2.5'* terdapat pada *Principal Component* pertama. Sedangkan sisanya, sebesar 0.1%, 0.0%, 0.0% dan 0.0% terdapat pada *Principal Component* kedua, ketiga, keempat dan kelima.
 
@@ -213,6 +232,7 @@ df.drop(['PM1.0', 'PM2.5', 'NC0.5', 'NC1.0','NC2.5'], axis=1, inplace=True)
 df.head()
 ```
 ![24](https://user-images.githubusercontent.com/88027268/203013279-8120c2e2-af49-4f8b-a921-5e6ac4c57ff2.jpg)
+Gambar 17. Overview dataset
 
 ### Pembagian dataset
 
@@ -243,6 +263,7 @@ print(f'Total # of sample in train dataset: {len(X_train)}')
 print(f'Total # of sample in test dataset: {len(X_test)}')
 ```
 ![25](https://user-images.githubusercontent.com/88027268/203013445-03989581-8cbc-46d1-aca2-4e6790919661.jpg)
+Gambar 18. Shape data train dan test
 
 ### Standarisasi
 Setelah melakukan split data ke dalam *data train* dan *data test*, Selanjutnya adalah melakukan *data scaling*, Karena *value* pada tiap fitur memiliki angka yang signifikan dan hal itu dapat mengakibatkan model dari *machine learning* kita kesulitan dalam mencari polanya oleh karena itu dapat dilakukan penyeragaman value tersebut kedalam rentang -1 to 1 menggunakan *StandardScaler*.
@@ -302,6 +323,7 @@ penjelasan dari parameter yang kita gunakan:
 Menampilkan hasil dari prediksi berupa *score* dari setiap kombinasi parameter yang kita lakukan *tuning* sebelumnya.
 
 ![29](https://user-images.githubusercontent.com/88027268/203013702-509ae813-bb35-4022-b4da-11dae76e044d.jpg)
+Gambar 19. Score terbaik beserta parameternya
 
 Kita mendapat *score* dari* metric recall* yang sangat baik yaitu 96% namun *score* ini masih dapat kita improve menggunakan beberapa cara yaitu *feature importance*, melakukan *feature engineering* dan menggunakan parameter lebih banyak lagi untuk di *hyperparameter tuning*.
 

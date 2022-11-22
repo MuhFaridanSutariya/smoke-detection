@@ -260,9 +260,6 @@ Kelebihan *Logistic Regression*:
 - Ketika terjadi *overfitting* pada algoritma *Logistic Regression* kita dapat menggunakan parameter regularisasi (L1 dan L2) untuk menghindari *overfitting*.
 - Tidak memerlukan spesifikasi *device* yang tinggi untuk melakukan *training* pada algoritma *logistic regression*.
 - bagus Ketika digunakan pada masalah *binary classification*.
-![28](https://user-images.githubusercontent.com/88027268/203013536-b121a5af-d08e-4d31-8113-b1f5b0ab3842.png)
-
-
 
 Kekurangan *Logistic Regression*: 
 - Pada data dengan *high dimensional* akan memiliki kecenderungan *overfitting*, salah satu cara untuk menghindari hal tersebut adalah dengan melakukan *regularization* akan tetapi hal tersebut dapat menambah kompleksitas dari model yang akan dihasilkan.

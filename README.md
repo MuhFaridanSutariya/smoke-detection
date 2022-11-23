@@ -80,12 +80,23 @@ Cakupan proses EDA sangat luas. Namun, secara umum, Anda dapat melakukan proses 
 4. Apakah ada fitur yang tidak berguna (*redundant*)?
 5. Bagaimana korelasi antara fitur dan target?
 
-
-Melakukan pengecekkan informasi pada tiap variabel pada dataset: 
-
-![5](https://user-images.githubusercontent.com/88027268/203011977-257ab80d-f659-45b0-a0ac-479b8e9d8ee0.jpg)
-
-Gambar 4. Keterangan dari tiap fitur pada dataset
+| Kolom          	| Type    	|
+|----------------	|---------	|
+| UTC            	| int64   	|
+| Temperature[C] 	| float64 	|
+| Humidity[%]    	| float64 	|
+| TVOC[ppb]      	| int64   	|
+| eCO2[ppm]      	| int64   	|
+| Raw H2         	| int64   	|
+| Raw Ethanol    	| int64   	|
+| Pressure[hPa]  	| float64 	|
+| PM1.0          	| float64 	|
+| PM2.5          	| float64 	|
+| NC0.5          	| float64 	|
+| NC1.0          	| float64 	|
+| NC2.5          	| float64 	|
+| CNT            	| int64   	|
+| Fire Alarm     	| int64   	|
 
 > Seluruh fitur pada dataset kita bertipe numeric.
 

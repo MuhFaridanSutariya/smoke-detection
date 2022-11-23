@@ -13,20 +13,19 @@ Yang melatar belakangi pembuatan project ini adalah karena indonesia menjadi neg
 
 Pada bagian ini, akan menjelaskan proses klarifikasi masalah.
 
-### Problem Statements
-
 <img width="960" alt="1" src="https://user-images.githubusercontent.com/88027268/203011051-26a43e4f-4235-467b-9dda-4213f07b131d.png">
 Gambar 2. Illustrasi asap rokok
 
-### Menjelaskan pernyataan masalah latar belakang:
-- Masyarakat indonesia yang merokok disembarang tempat tanpa memperdulikan sekitar.
-- Asap kebakaran sulit untuk diprediksi jika secara manual.
+### Problem Statements
+
+- Dari serangkaian fitur yang terdapat pada dataset, fitur apa yang paling berkorelasi terhadap *fire alarm*?
+- Apakah model "machine learning* yang telah dibuat nantinya dapat memberikan score yang tinggi?
 
 ### Goals
 
 Menjelaskan tujuan dari pernyataan masalah:
-- Membuat sebuah model *machine learning* yang dapat mendeteksi asap disuatu tempat atau ruangan yang berpotensi membahayakan manusia dengan akurat.
-- Memberikan rasa aman kepada masyarakat indonesia yang ingin menghidari asap rokok disuatu tempat.
+- Mengetahui fitur yang paling berkorelasi dengan *fire alarm*.
+- Membuat sebuah model *machine learning* yang dapat mendeteksi asap seakurat mungkin dari fitur-fitur yang ada.
 
     ### Solution statements
     - dapat menggunakan satu algoritma *machine learning* yaitu *Logistic Regression* dan dari algoritma *machine learning* tersebut kita akan improve recall scorenya menggunakan hyperparameter tuning *GridSearchCV*.
@@ -328,6 +327,6 @@ Penjelasan dari formula diatas:
 
 *Recall* adalah salah satu *metric* dari kasus klasifikasi yang lebih fokus untuk memprediksi asap dalam ruangan tersebut padahal tidak ada asap. dibandingkan model *machine learning* memprediksi tidak ada asap dalam ruangan tersebut padahal terdapat asap. tentu akan sangat fatal jika kita memilih model *machine learning* fokus memprediksi tidak ada asap dalam ruangan tersebut padahal terdapat asap, karena jika asap yang keluar adalah potensi dari kebakaran maka hal tersebut dapat berbahaya bagi orang yang ada didalam ruangan tersebut.
 
-Kesimpulan: Menarik bahwa hanya dengan algoritma *machine learning* klasik sudah dapat memberikan *score* yang sangat tinggi. kita dapat mencoba menggunakan *neural network* untuk hasil yang lebih baik lagi karena algoritma *machine learning* klasik seperti *logistic regression* memiliki keterbatasan dan *neural network* dapat menutupi dari keterbatasan itu.
+Kesimpulan: Projek ini berhasil mengetahui bahwa fitur dari *Humadity* dan *CNT* adalah fitur yang paling berkorelasi dengan *Fire Alarm*. Menarik bahwa hanya dengan algoritma *machine learning* klasik sudah dapat memberikan *score* yang sangat tinggi. kita dapat mencoba menggunakan *neural network* untuk hasil yang lebih baik lagi karena algoritma *machine learning* klasik seperti *logistic regression* memiliki keterbatasan dan *neural network* dapat menutupi dari keterbatasan itu.
 
 **---END---**

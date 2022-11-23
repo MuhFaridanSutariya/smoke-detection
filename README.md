@@ -66,12 +66,7 @@ Selanjutnya membaca dataset dan menampilkan 5 data teratas:
 | 4 	| 1654733335 	| 20.059         	| 54.69       	| 0         	| 400       	| 12403  	| 18921       	| 939.744       	| 0.0   	| 0.0   	| 0.0   	| 0.0   	| 0.0   	| 4   	|
 
 Kita dapat menghapus fitur 'Unnamed: 0' Kemudian melihat dimensi dari dataset ini. lalu melihat dimensi dari dataset kita.
-```
-print("Row: {}, Columns: {}".format(df.shape[0], df.shape[1]))
-```
-![3](https://user-images.githubusercontent.com/88027268/203011353-91f2f557-8737-4427-8106-575c485db4dd.jpg)
 
-Gambar 3. Dimensi dataset
 > Dataset ini terdiri dari 62630 data dan 10 kolom.
 
 ### Exploratory Data Analysis - Deskripsi Variabel:
@@ -87,9 +82,7 @@ Cakupan proses EDA sangat luas. Namun, secara umum, Anda dapat melakukan proses 
 
 
 Melakukan pengecekkan informasi pada tiap variabel pada dataset: 
-```
-df.info()
-```
+
 ![5](https://user-images.githubusercontent.com/88027268/203011977-257ab80d-f659-45b0-a0ac-479b8e9d8ee0.jpg)
 
 Gambar 4. Keterangan dari tiap fitur pada dataset
@@ -97,11 +90,18 @@ Gambar 4. Keterangan dari tiap fitur pada dataset
 > Seluruh fitur pada dataset kita bertipe numeric.
 
 Melakukan pengecekkan deskripsi statistik pada dataset untuk mengetahui apakah terdapat anomali:
-```
-df.describe()
-```
-![6](https://user-images.githubusercontent.com/88027268/203012023-bd10d1c8-0334-47d3-a537-d538b52f7379.jpg)
-Gambar 5. Kalkulasi deskripsi statistik dari dataset 
+
+|       	| UTC                	| Temperature[C]     	| Humidity[%]        	| TVOC[ppb]          	| eCO2[ppm]          	| Raw H2             	| Raw Ethanol        	| Pressure[hPa]      	| PM1.0              	| PM2.5              	| NC0.5              	| NC1.0              	| NC2.5              	| CNT               	| Fire Alarm         	|
+|-------	|--------------------	|--------------------	|--------------------	|--------------------	|--------------------	|--------------------	|--------------------	|--------------------	|--------------------	|--------------------	|--------------------	|--------------------	|--------------------	|-------------------	|--------------------	|
+| count 	| 62630.0            	| 62630.0            	| 62630.0            	| 62630.0            	| 62630.0            	| 62630.0            	| 62630.0            	| 62630.0            	| 62630.0            	| 62630.0            	| 62630.0            	| 62630.0            	| 62630.0            	| 62630.0           	| 62630.0            	|
+| mean  	| 1654792066.1842728 	| 15.97042358294747  	| 48.539499441162384 	| 1942.0575283410506 	| 670.0210442280057  	| 12942.453935813508 	| 19754.257911543988 	| 938.6276494651127  	| 100.59430911703656 	| 184.46777023790517 	| 491.46360769599227 	| 203.58648749800412 	| 80.04904232795785  	| 10511.38615679387 	| 0.7146255787961041 	|
+| std   	| 110002.48807802147 	| 14.359576152610806 	| 8.865367089675287  	| 7811.589055386021  	| 1905.8854393506067 	| 272.4643052353358  	| 609.5131564626391  	| 1.3313435732418013 	| 922.5242445867349  	| 1976.3056148260875 	| 4265.661251435324  	| 2214.738555639472  	| 1083.3831887688002 	| 7597.870997377545 	| 0.4515961881806646 	|
+| min   	| 1654712187.0       	| -22.01             	| 10.74              	| 0.0                	| 400.0              	| 10668.0            	| 15317.0            	| 930.852            	| 0.0                	| 0.0                	| 0.0                	| 0.0                	| 0.0                	| 0.0               	| 0.0                	|
+| 25%   	| 1654743244.25      	| 10.99425           	| 47.53              	| 130.0              	| 400.0              	| 12830.0            	| 19435.0            	| 938.7              	| 1.28               	| 1.34               	| 8.82               	| 1.384              	| 0.033              	| 3625.25           	| 0.0                	|
+| 50%   	| 1654761919.5       	| 20.13              	| 50.15              	| 981.0              	| 400.0              	| 12924.0            	| 19501.0            	| 938.816            	| 1.81               	| 1.88               	| 12.45              	| 1.943              	| 0.044              	| 9336.0            	| 1.0                	|
+| 75%   	| 1654777576.75      	| 25.4095            	| 53.24              	| 1189.0             	| 438.0              	| 13109.0            	| 20078.0            	| 939.418            	| 2.09               	| 2.18               	| 14.42              	| 2.249              	| 0.051              	| 17164.75          	| 1.0                	|
+| max   	| 1655130051.0       	| 59.93              	| 75.2               	| 60000.0            	| 60000.0            	| 13803.0            	| 21410.0            	| 939.861            	| 14333.69           	| 45432.26           	| 61482.03           	| 51914.68           	| 30026.438          	| 24993.0           	| 1.0                	|
+
 > Tidak ada keanehan dari deskripsi statistik diatas.
 
 *Function describe()* memberikan informasi statistik pada masing-masing kolom, antara lain:
@@ -117,9 +117,24 @@ Gambar 5. Kalkulasi deskripsi statistik dari dataset
 
 ### Exploratory Exploratory Data Analysis - Menangani Missing Value dan Outliers:
 
-![7](https://user-images.githubusercontent.com/88027268/203012078-75fde3d1-5d66-457a-8bb7-21dc021897ad.jpg)
+|                	| Total 	| Percentage of Missing Values 	|
+|----------------	|-------	|------------------------------	|
+| UTC            	| 0     	| 0.0                          	|
+| Temperature[C] 	| 0     	| 0.0                          	|
+| Humidity[%]    	| 0     	| 0.0                          	|
+| TVOC[ppb]      	| 0     	| 0.0                          	|
+| eCO2[ppm]      	| 0     	| 0.0                          	|
+| Raw H2         	| 0     	| 0.0                          	|
+| Raw Ethanol    	| 0     	| 0.0                          	|
+| Pressure[hPa]  	| 0     	| 0.0                          	|
+| PM1.0          	| 0     	| 0.0                          	|
+| PM2.5          	| 0     	| 0.0                          	|
+| NC0.5          	| 0     	| 0.0                          	|
+| NC1.0          	| 0     	| 0.0                          	|
+| NC2.5          	| 0     	| 0.0                          	|
+| CNT            	| 0     	| 0.0                          	|
+| Fire Alarm     	| 0     	| 0.0                          	|
 
-Gambar 5. Missing value pada dataset
 > Tidak terdapat missing value pada dataset.
 
 ![8](https://user-images.githubusercontent.com/88027268/203012132-ca1b43c3-1202-4ecb-b1f6-f0d366029902.jpg)
@@ -195,14 +210,7 @@ Pada bagian ini terdapat empat tahap persiapan data, yaitu:
 *Feature selection* adalah proses mengurangi jumlah fitur atau variabel input dengan memilih fitur-fitur yang dianggap paling relevan terhadap model.
 
 - Fitur yang sangat didominasi oleh satu nilai saja akan dibuang pada tahap ini. karena fitur yang didominasi satu nilai saja tidak berarti untuk *machine learning*.
-```
-for col in df.columns.tolist():
-    print(df[col].value_counts().count())
-    print('\n')
-```
-![20](https://user-images.githubusercontent.com/88027268/203013002-6875dab8-de7e-455c-8147-8fa6cc0175d7.jpg)
 
-Gambar 15. Distribusi value tiap fitur
 > Tidak ada fitur dengan satu nilai saja maka tidak ada fitur yang harus dibuang. 
 
 - menghapus kolom *UTC* karena tidak berpengaruh pada model *machine learning* sehingga hal ini dapat memudahkan *machine learning* dalam pencari pola dari dataset.
@@ -212,31 +220,12 @@ Gambar 15. Distribusi value tiap fitur
 
 Fitur yang akan dilakukan PCA adalah *PM1.0, PM2.5, NC0.5, NC1.0 dan NC2.5*. Karena fitur tersebut saling berkorelasi positif dan cukup tinggi.
 
-```
-pca = PCA(n_components=5, random_state=42)
-pca.fit(df[['PM1.0', 'PM2.5', 'NC0.5', 'NC1.0','NC2.5']])
-princ_comp = pca.transform(df[['PM1.0', 'PM2.5', 'NC0.5', 'NC1.0','NC2.5']])
-```
 - parameter *n_components* adalah jumlah komponen atau dimensi seperti dikasus ini 5 yaitu *'PM1.0', 'PM2.5', 'NC0.5', 'NC1.0' dan 'NC2.5'*
 - parameter *random_state* berfungsi untuk mengontrol *random number generator* yang digunakan. Parameter ini berupa bilangan *integer* dan nilainya bebas. Pada kasus ini, Menerapkan *random_state = 42*. Berapa pun nilai *integer* yang ditentukan. selama itu bilangan *integer*, ia akan memberikan hasil yang sama setiap kali dilakukan pemanggilan fungsi.
 
-```
-pca.explained_variance_ratio_.round(3)
-```
-![23](https://user-images.githubusercontent.com/88027268/203013240-27bb6097-ed9f-48b6-8804-f3957fc4e6c5.jpg)
-
-Gambar 16. Principal Component dari tiap fitur
-
-> Arti dari *output* di atas adalah, 0.9% informasi pada kelima fitur *'PM1.0', 'PM2.5', 'NC0.5', 'NC1.0' dan 'NC2.5'* terdapat pada *Principal Component* pertama. Sedangkan sisanya, sebesar 0.1%, 0.0%, 0.0% dan 0.0% terdapat pada *Principal Component* kedua, ketiga, keempat dan kelima.
+> Hasil dari *PCA* adalah, 0.9% informasi pada kelima fitur *'PM1.0', 'PM2.5', 'NC0.5', 'NC1.0' dan 'NC2.5'* terdapat pada *Principal Component* pertama. Sedangkan sisanya, sebesar 0.1%, 0.0%, 0.0% dan 0.0% terdapat pada *Principal Component* kedua, ketiga, keempat dan kelima.
 
 Dari hasil diatas dapat dipertahankan pada *Principal Component* pertama saja untuk menggantikan kelima fitur yang telah direduksi sebelumnya lalu kita beri nama fitur ini dengan *'dimension'*
-
-```
-pca = PCA(n_components=1, random_state=42)
-pca.fit(df[['PM1.0', 'PM2.5', 'NC0.5', 'NC1.0','NC2.5']])
-df['dimension'] = pca.transform(df.loc[:, ('PM1.0', 'PM2.5', 'NC0.5', 'NC1.0','NC2.5')]).flatten()
-df.drop(['PM1.0', 'PM2.5', 'NC0.5', 'NC1.0','NC2.5'], axis=1, inplace=True)
-```
 
 ### Pembagian dataset
 
@@ -248,12 +237,6 @@ Sebagai contoh, Terdapat dataset berjumlah 5 juta sampel. Dengan proporsi pembag
 
 <b>Bisa disimpulkan pembagian proporsi untuk *data train* dan *data test* sangat *relative* tergantung ketersedian dataset yang kita punya.</b>
 
-Berikut adalah *code* untuk melakukan pembagian proporsi *data train* dan *data test*:
-```
-X = df.drop(["Fire Alarm"],axis =1)
-y = df["Fire Alarm"]
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.1, random_state = 42)
-```
 Penjelasan:
 - X adalah sebagai variabel *independent*
 - y adalah sebagai variabel *dependent*
@@ -269,19 +252,13 @@ Gambar 17. dimensi data train dan test
 ### Standarisasi
 Setelah melakukan split data ke dalam *data train* dan *data test*, Selanjutnya adalah melakukan *data scaling*, Karena *value* pada tiap fitur memiliki angka yang signifikan dan hal itu dapat mengakibatkan model dari *machine learning* kita kesulitan dalam mencari polanya oleh karena itu dapat dilakukan penyeragaman value tersebut kedalam rentang -1 to 1 menggunakan *StandardScaler*.
 
-Standarisasi menggunakan *StandardScaler*:
-```
-scaling = StandardScaler()
-X_train = scaling.fit_transform(X_train)
-```
-
 ## Modeling
 
 Selanjutnya akan lakukan *training* pada *data train* dan melakukan *predict* pada *data test* yang telah kita split sebelumnya. Algoritma yang akan kita gunakan adalah *Logistic Regression*.
 
 *Logistic Regression* hampir mirip dengan *Linear Regression*, memiliki kemiripan yaitu sama-sama memiliki garis regresi. Salah satu yang membedakan adalah *Logistic Regression* digunakan untuk menentukan prediksi yang kita buat benar atau salah sedangkan *Linear Regression* digunakan untuk memprediksi nilai yang kontinu.
 
-Kenapa saya menggunakan *Logistic Regression*? ini dikarenakan alogritma model ini sangat cocok ketika kasus *binary classification*.
+Kenapa saya menggunakan *Logistic Regression*? ini dikarenakan alogritma model ini menggunakan.
 
 Kelebihan *Logistic Regression*:
 - Ketika terjadi *overfitting* pada algoritma *Logistic Regression* kita dapat menggunakan parameter regularisasi (L1 dan L2) untuk menghindari *overfitting*.
@@ -294,12 +271,6 @@ Kekurangan *Logistic Regression*:
 
 Selanjutnya *define* sebuah *object* dari *Logistic Regression* dan beberapa parameter yang akan kita lakukan *hyperparameter tuning* untuk mendapatkan parameter terbaik pada *case* kita. 
 
-```
-model = LogisticRegression()
-solvers = ['newton-cg', 'lbfgs', 'liblinear']
-penalty = ['l2']
-c_values = [100, 10, 1.0, 0.1, 0.01]
-```
 penjelasan dari setiap parameter:
 
 - *solvers* adalah *optimizer* dari algoritma yang akan kita gunakan sebagai *method* untuk mencari *loss* terkecil dari *gradient descent*. terdapat beberapa *solvers* yang dapat digunakan seperti *newton-cg, lbfgs, liblinear, sag* dan *saga*. Secara *default* akan menggunakan *lbfgs*.
@@ -308,11 +279,6 @@ penjelasan dari setiap parameter:
 
 Selanjutnya adalah melakukan *hyperparameter tuning* menggunakan *GridSearchCV*. *GridSearchCV* adalah metode pemilihan kombinasi model dan *hyperparameter* dengan cara menguji coba satu persatu kombinasi dan melakukan validasi untuk setiap kombinasi. Tujuannya adalah menentukan kombinasi yang menghasilkan performa model terbaik yang dapat dipilih untuk dijadikan model untuk prediksi.
 
-```
-grid = dict(solver=solvers,penalty=penalty,C=c_values)
-grid_search = GridSearchCV(estimator=model, param_grid=grid, n_jobs=-1, cv=3, scoring='recall')
-grid_result = grid_search.fit(X, y)
-```
 penjelasan dari parameter yang kita gunakan:
 
 - *estimator* adalah *object* dari algoritma yang telah kita *define* sebelumnya.

@@ -23,7 +23,6 @@ Gambar 2. Illustrasi asap rokok
 
 ### Goals
 
-Menjelaskan tujuan dari pernyataan masalah:
 - Mengetahui fitur yang paling berkorelasi dengan *fire alarm*.
 - Membuat sebuah model *machine learning* yang dapat mendeteksi asap seakurat mungkin dari fitur-fitur yang ada.
 

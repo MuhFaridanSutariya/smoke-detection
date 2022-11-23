@@ -72,7 +72,7 @@ print("Row: {}, Columns: {}".format(df.shape[0], df.shape[1]))
 ![3](https://user-images.githubusercontent.com/88027268/203011353-91f2f557-8737-4427-8106-575c485db4dd.jpg)
 
 Gambar 3. Dimensi dataset
-> Dataset ini terdiri dari 62630 data dan 10 columns.
+> Dataset ini terdiri dari 62630 data dan 10 kolom.
 
 ### Exploratory Data Analysis - Deskripsi Variabel:
 *Exploratory data analysis* atau sering disingkat EDA merupakan proses investigasi awal pada data untuk menganalisis karakteristik, menemukan pola, anomali, dan memeriksa asumsi pada data. Teknik ini biasanya menggunakan bantuan statistik dan representasi grafis atau visualisasi.

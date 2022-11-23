@@ -325,7 +325,7 @@ Menampilkan hasil dari prediksi berupa *score* dari setiap kombinasi parameter y
 ![29](https://user-images.githubusercontent.com/88027268/203013702-509ae813-bb35-4022-b4da-11dae76e044d.jpg)
 Gambar 19. Score terbaik beserta parameternya
 
-Kita mendapat *score* dari* metric recall* yang sangat baik yaitu 96% namun *score* ini masih dapat kita improve menggunakan beberapa cara yaitu *feature importance*, melakukan *feature engineering* dan menggunakan parameter lebih banyak lagi untuk di *hyperparameter tuning*.
+Kita mendapat *score* dari* metric *recall* yang sangat baik yaitu 96% namun *score* ini masih dapat kita improve menggunakan beberapa cara yaitu *feature importance*, melakukan *feature engineering* dan menggunakan parameter lebih banyak lagi untuk di *hyperparameter tuning*.
 
 *metric* yang kita gunakan pada kasus ini adalah: *Recall*, karena hasil yang dinginkan adalah *False Negative(FN)* sekecil mungkin sehingga kita akan menggunakan *recall* sebagai *metric* patokan pada kasus ini. konsep dari *recall* ini sebagai berikut:
 
@@ -339,6 +339,6 @@ Penjelasan dari formula diatas:
 
 *Recall* adalah salah satu *metric* dari kasus klasifikasi yang lebih fokus untuk memprediksi asap dalam ruangan tersebut padahal tidak ada asap. dibandingkan model *machine learning* memprediksi tidak ada asap dalam ruangan tersebut padahal terdapat asap. tentu akan sangat fatal jika kita memilih model *machine learning* fokus memprediksi tidak ada asap dalam ruangan tersebut padahal terdapat asap, karena jika asap yang keluar adalah potensi dari kebakaran maka hal tersebut dapat berbahaya bagi orang yang ada didalam ruangan tersebut.
 
-Link github repo: https://github.com/MuhFaridanSutariya/smoke-detection
+Kesimpulan: Menarik bahwa hanya dengan algoritma *machine learning* klasik sudah dapat memberikan *score* yang sangat tinggi. kita dapat mencoba menggunakan *neural network* untuk hasil yang lebih baik lagi karena algoritma *machine learning* klasik seperti *logistic regression* memiliki keterbatasan dan *neural network* dapat menutupi dari keterbatasan itu.
 
 **---END---**

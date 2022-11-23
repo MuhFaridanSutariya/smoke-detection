@@ -205,9 +205,6 @@ Gambar 15. Distribusi value tiap fitur
 > Tidak ada fitur dengan satu nilai saja maka tidak ada fitur yang harus dibuang. 
 
 - menghapus kolom *UTC* karena tidak berpengaruh pada model *machine learning* sehingga hal ini dapat memudahkan *machine learning* dalam pencari pola dari dataset.
-```
-df = df.drop(columns='UTC')
-```
 
 ### Principal Component Analysis (PCA)
 *PCA* bekerja menggunakan metode aljabar linier. Ia mengasumsikan bahwa sekumpulan data pada arah dengan *varians* terbesar merupakan yang paling penting (utama). *PCA* umumnya digunakan ketika variabel dalam data memiliki korelasi yang tinggi. Korelasi positif yang tinggi ini menunjukkan data yang berulang atau *redundant*.
@@ -265,7 +262,7 @@ Penjelasan:
 Melihat dimensi hasil pembagian pada *data train* dan *data test*:
 ![25](https://user-images.githubusercontent.com/88027268/203013445-03989581-8cbc-46d1-aca2-4e6790919661.jpg)
 
-Gambar 18. dimensi data train dan test
+Gambar 17. dimensi data train dan test
 
 ### Standarisasi
 Setelah melakukan split data ke dalam *data train* dan *data test*, Selanjutnya adalah melakukan *data scaling*, Karena *value* pada tiap fitur memiliki angka yang signifikan dan hal itu dapat mengakibatkan model dari *machine learning* kita kesulitan dalam mencari polanya oleh karena itu dapat dilakukan penyeragaman value tersebut kedalam rentang -1 to 1 menggunakan *StandardScaler*.
@@ -326,7 +323,7 @@ Menampilkan hasil dari prediksi berupa *score* dari setiap kombinasi parameter y
 
 ![29](https://user-images.githubusercontent.com/88027268/203013702-509ae813-bb35-4022-b4da-11dae76e044d.jpg)
 
-Gambar 19. Urutan score terbaik beserta parameternya
+Gambar 18. Urutan score terbaik beserta parameternya
 
 Kita mendapat *score* dari* metric *recall* yang sangat baik yaitu 96% namun *score* ini masih dapat kita improve menggunakan beberapa cara yaitu *feature importance*, melakukan *feature engineering* dan menggunakan parameter lebih banyak lagi untuk di *hyperparameter tuning*.
 

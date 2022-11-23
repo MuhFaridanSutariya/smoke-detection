@@ -54,7 +54,7 @@ Link download dataset: https://www.kaggle.com/datasets/deepcontractor/smoke-dete
 ### Data Loading:
 Langkah pertama import *library* yang dibutuhkan untuk kasus kali ini:
 
-*Library* yang akan diimport adalah *library* yang berhubungan untuk memanipulasi data, data visualisasi, *preprocessing*, pengembangan *machine learning*, evaluasi dan mematikan warning yang didapat setelah menjalankan code. 
+*Library* yang akan diimport adalah *library* yang berhubungan untuk memanipulasi data, data visualisasi, *preprocessing*, algoritma *machine learning*, evaluasi dan mematikan warning yang didapat setelah menjalankan code. 
 
 Selanjutnya membaca dataset dan menampilkan 5 data teratas:
 |   	| UTC        	| Temperature[C] 	| Humidity[%] 	| TVOC[ppb] 	| eCO2[ppm] 	| Raw H2 	| Raw Ethanol 	| Pressure[hPa] 	| PM1.0 	| PM2.5 	| NC0.5 	| NC1.0 	| NC2.5 	| CNT 	|

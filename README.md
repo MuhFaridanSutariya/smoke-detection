@@ -19,7 +19,7 @@ Gambar 2. Illustrasi asap rokok
 ### Problem Statements
 
 - Dari serangkaian fitur yang terdapat pada dataset, fitur apa yang paling berkorelasi terhadap *fire alarm*?
-- Apakah model "machine learning* yang telah dibuat nantinya dapat memberikan score yang tinggi?
+- Apakah model *machine learning* yang telah dibuat nantinya dapat memberikan score yang tinggi?
 
 ### Goals
 

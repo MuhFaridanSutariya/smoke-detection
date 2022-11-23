@@ -260,6 +260,7 @@ Penjelasan:
 - *random_state* berfungsi untuk mengontrol *random number generator* yang digunakan.
 
 Melihat dimensi hasil pembagian pada *data train* dan *data test*:
+
 ![25](https://user-images.githubusercontent.com/88027268/203013445-03989581-8cbc-46d1-aca2-4e6790919661.jpg)
 
 Gambar 17. dimensi data train dan test

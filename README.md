@@ -298,13 +298,21 @@ penjelasan dari parameter yang kita gunakan:
 - *cv* adalah *cross-validation generator* yang dimana kita menentukan ingin melakukan berapa kali percobaan secara acak pada dataset kita.
 
 ## Evaluation
-Menampilkan hasil dari prediksi berupa *score* dari setiap kombinasi parameter yang kita lakukan *tuning* sebelumnya.
+Menampilkan hasil dari prediksi berupa *score* dari setiap kombinasi parameter terbaik yang telah dilakukan *tuning* sebelumnya.
 
-![29](https://user-images.githubusercontent.com/88027268/203013702-509ae813-bb35-4022-b4da-11dae76e044d.jpg)
+| names   	| values    	|
+|---------	|-----------	|
+| C       	| 100       	|
+| penalty 	| l2        	|
+| solver  	| liblinear 	|
 
-Gambar 18. Urutan score terbaik beserta parameternya
 
-Kita mendapat *score* dari* metric *recall* yang sangat baik yaitu 96% namun *score* ini masih dapat kita improve menggunakan beberapa cara yaitu *feature importance*, melakukan *feature engineering* dan menggunakan parameter lebih banyak lagi untuk di *hyperparameter tuning*.
+|   	| Precision          	| Recall             	| F1-score           	| Support 	|
+|---	|--------------------	|--------------------	|--------------------	|---------	|
+| 0 	| 0.9385026737967914 	| 0.9892897406989853 	| 0.9632272228320526 	| 1774.0  	|
+| 1 	| 0.9956749374004097 	| 0.974381822232123  	| 0.9849133078135555 	| 4489.0  	|
+
+Kita mendapat *score* dari* metric *recall* yang sangat baik yaitu 97% namun *score* ini masih dapat kita improve menggunakan beberapa cara yaitu *feature importance*, melakukan *feature engineering* dan menggunakan parameter lebih banyak lagi untuk di *hyperparameter tuning*.
 
 *metric* yang kita gunakan pada kasus ini adalah: *Recall*, karena hasil yang dinginkan adalah *False Negative(FN)* sekecil mungkin sehingga kita akan menggunakan *recall* sebagai *metric* patokan pada kasus ini. konsep dari *recall* ini sebagai berikut:
 
@@ -315,6 +323,8 @@ Recall = \frac{True positive}{True positive + False Negative}
 Penjelasan dari formula diatas:
 - *True Positve* berarti model *machine learning* berhasil memprediksi bahwa ditempat tersebut terdapat asap dan memang terdapat asap di tempat tersebut.
 - *False Negative* berarti model *machine learning* memprediksi bahwa ditempat tersebut tidak ada asap padahal ditempat tersebut terdapat asap. model *machine learning* ini dianggap gagal mendeteksi adanya asap. 
+
+![31](https://user-images.githubusercontent.com/88027268/203662066-12b44ac6-eabe-49cc-9f6d-3dd3dd7cf6f7.png)
 
 *Recall* adalah salah satu *metric* dari kasus klasifikasi yang lebih fokus untuk memprediksi asap dalam ruangan tersebut padahal tidak ada asap. dibandingkan model *machine learning* memprediksi tidak ada asap dalam ruangan tersebut padahal terdapat asap. tentu akan sangat fatal jika kita memilih model *machine learning* fokus memprediksi tidak ada asap dalam ruangan tersebut padahal terdapat asap, karena jika asap yang keluar adalah potensi dari kebakaran maka hal tersebut dapat berbahaya bagi orang yang ada didalam ruangan tersebut.
 

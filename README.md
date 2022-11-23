@@ -118,6 +118,7 @@ Gambar 5. Kalkulasi deskripsi statistik dari dataset
 ### Exploratory Exploratory Data Analysis - Menangani Missing Value dan Outliers:
 
 ![7](https://user-images.githubusercontent.com/88027268/203012078-75fde3d1-5d66-457a-8bb7-21dc021897ad.jpg)
+
 Gambar 5. Missing value pada dataset
 > Tidak terdapat missing value pada dataset.
 

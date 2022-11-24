@@ -337,4 +337,6 @@ Gambar 12. heatmap confusion matrix
 
 Kesimpulan: Projek ini berhasil mengetahui bahwa fitur dari *Humadity* dan *CNT* adalah fitur yang paling berkorelasi dengan *Fire Alarm*. Menarik bahwa hanya dengan algoritma *machine learning* klasik sudah dapat memberikan *score* yang sangat tinggi. Dapat mencoba menggunakan *neural network* untuk hasil yang lebih baik lagi karena algoritma *machine learning* klasik seperti *logistic regression* memiliki keterbatasan dan *neural network* dapat menutupi dari keterbatasan itu.
 
+Reference: [(Donglin Jin, Shengzhe and Hakil Kim, 2015)](https://www.researchgate.net/publication/308815224_Robust_fire_detection_using_logistic_regression_and_randomness_testing_for_real-time_video_surveillance)
+
 **---END---**

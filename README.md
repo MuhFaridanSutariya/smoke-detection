@@ -7,7 +7,7 @@ Gambar 1. Illustrasi asap rokok
 
 Yang melatar belakangi pembuatan project ini adalah karena indonesia menjadi negara dengan mayoritas masyarakatnya perokok aktif dan banyak tempat yang seharusnya dilarang merokok namun seringkali perokok tetap membakar rokoknya ditempat tersebut. 
 
-- kenapa masalah ini harus diselesaikan? karena banyak dari masyarakat indonesia sering melanggar peraturan dilarang merokok diarea tersebut mengakibatkan orang yang berada di area tersebut dapat terkena dampaknya juga yang dihasilkan dari perokok itu sendiri [(Joaquin Barnoya and Stanton A. Glantz, 2005)](https://www.ahajournals.org/doi/full/10.1161/CIRCULATIONAHA.104.492215). orang-orang yang berada di *no smoking area* mengasumsikan kalo diarea tersebut tidak ada perokok sehingga orang-orang yang tidak ingin terkena asap rokok memilih tempat tersebut. selain itu model *machine learning* ini juga dapat digunakan untuk mendeteksi asap kebakaran jika didalam rumah atau ruangan terdapat asap. salah satu solusi yang dapat saya berikan adalah dengan cara membuat sebuah model *machine learning* untuk mendeteksi adanya asap ditempat tersebut, yang nantinya model *machine learning* tersebut dapat dikembangkan ke perangkat *IoT* agar dapat memfasilitasi diberbagai tempat. jika perangkat *IoT* tersebut mendeteksi asap nantinya terdapat sebuah pemberitahuan seperti *alarm*. 
+- banyak dari masyarakat indonesia sering melanggar peraturan dilarang merokok diarea tersebut mengakibatkan orang yang berada di area tersebut dapat terkena dampaknya juga yang dihasilkan dari perokok itu sendiri [(Joaquin Barnoya and Stanton A. Glantz, 2005)](https://www.ahajournals.org/doi/full/10.1161/CIRCULATIONAHA.104.492215). orang-orang yang berada di *no smoking area* mengasumsikan kalo diarea tersebut tidak ada perokok sehingga orang-orang yang tidak ingin terkena asap rokok memilih tempat tersebut. selain itu model *machine learning* ini juga dapat digunakan untuk mendeteksi asap kebakaran jika didalam rumah atau ruangan terdapat asap. salah satu solusi yang dapat saya berikan adalah dengan cara membuat sebuah model *machine learning* untuk mendeteksi adanya asap ditempat tersebut, yang nantinya model *machine learning* tersebut dapat dikembangkan ke perangkat *IoT* agar dapat memfasilitasi diberbagai tempat. jika perangkat *IoT* tersebut mendeteksi asap nantinya terdapat sebuah pemberitahuan seperti *alarm*. 
  
 ## Business Understanding
 
@@ -27,7 +27,7 @@ Gambar 2. Illustrasi asap rokok
 - Membuat sebuah model *machine learning* yang dapat mendeteksi asap seakurat mungkin dari fitur-fitur yang ada.
 
     ### Solution statements
-    - dapat menggunakan satu algoritma *machine learning* yaitu *Logistic Regression* dan dari algoritma *machine learning* tersebut kita akan improve recall scorenya menggunakan hyperparameter tuning *GridSearchCV*.
+    - dapat menggunakan satu algoritma *machine learning* yaitu *Logistic Regression* dan dari algoritma *machine learning* tersebut akan diimprove recall scorenya menggunakan hyperparameter tuning *GridSearchCV*.
 
 ## Data Understanding
 Link download dataset: https://www.kaggle.com/datasets/deepcontractor/smoke-detection-dataset  
@@ -260,10 +260,9 @@ Penjelasan:
 - *random_state* berfungsi untuk mengontrol *random number generator* yang digunakan.
 
 Melihat dimensi hasil pembagian pada *data train* dan *data test*:
-
-![25](https://user-images.githubusercontent.com/88027268/203013445-03989581-8cbc-46d1-aca2-4e6790919661.jpg)
-
-Gambar 17. dimensi data train dan test
+| Total Data 	| 62630 	|
+| Train Data 	| 56367 	|
+| Test Data  	| 6263  	|
 
 ### Standarisasi
 Setelah melakukan split data ke dalam *data train* dan *data test*, Selanjutnya adalah melakukan *data scaling*, Karena *value* pada tiap fitur memiliki angka yang signifikan dan hal itu dapat mengakibatkan model dari *machine learning* kita kesulitan dalam mencari polanya oleh karena itu dapat dilakukan penyeragaman value tersebut kedalam rentang -1 to 1 menggunakan *StandardScaler*.

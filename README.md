@@ -151,7 +151,7 @@ Melakukan pengecekkan deskripsi statistik pada dataset untuk mengetahui apakah t
 ![10](https://user-images.githubusercontent.com/88027268/203012189-b189c06d-6701-40bd-b466-e4561e06a474.jpg)
 ![11](https://user-images.githubusercontent.com/88027268/203012218-724f7176-142e-428f-b095-fd845096f658.jpg)
 ![12](https://user-images.githubusercontent.com/88027268/203012254-f7c28332-b38a-4507-8ca1-3517aa0071b5.jpg)
-Gambar 6. Outlier pada dataset
+Gambar 3. Outlier pada dataset
 
 - Outlier yang terjadi pada fitur temperature merupakan nilai yang wajar karena temperature dapat berubah secara signifikan tiap waktu.
 - Outlier yang terjadi pada fitur Raw Ethanol, TVOC dan Raw H2 merupakan nilai yang wajar karena dapat berubah secara signifikan tiap saat tergantung pada gas yang dapat dideteksi oleh sistem
@@ -165,7 +165,7 @@ Gambar 6. Outlier pada dataset
 Melihat proporsi dari nilai variabel target pada dataset:
 
 ![13](https://user-images.githubusercontent.com/88027268/203012313-e90c3936-0252-4286-88e2-24e833ddd769.png)
-Gambar 7. Proporsi pada fitur target
+Gambar 4. Proporsi pada fitur target
 
 > Terjadi data *imbalance* pada variabel target. Permasalahan tersebut dapat diselesaikan dengan cara melakukan pendekatan *undersampling* dan *uppersampling* pada variabel target atau dengan cara lain yaitu memilih *metric* yang tepat seperti *recall*, *precision* dan *F1 Score*. Tidak dapat menggunakan *metric* *accuracy* karena dapat menyebabkan bias pada saat *scoring* model.
 
@@ -175,46 +175,46 @@ Melihat *kernel density estimation* (KDE) plot dari tiap variabel:
 Melihat hubungan humidity dengan variabel target menggunakan KDE
 ![14](https://user-images.githubusercontent.com/88027268/203012378-5e964184-d1d6-45c9-a4b2-6c03ff518b0b.png)
 
-Gambar 8. KDE Humidity vs Fire Alarm
+Gambar 5. KDE Humidity vs Fire Alarm
 > Selama *experiment* kemungkinan *fire alarm* ditempat yang memiliki kelembapan cukup tinggi. karena puncak *density* pada visualisasi diatas mencakup kelembapan > 40%
 
 
 Melihat hubungan temperature dengan variabel target menggunakan KDE
 ![15](https://user-images.githubusercontent.com/88027268/203012429-d73bc0cc-2430-48be-9b13-d85fb0520b05.png)
 
-Gambar 9. KDE Temperature vs Fire Alarm
+Gambar 6. KDE Temperature vs Fire Alarm
 > Selama *experiment* kemungkinan *fire alarm* ditempat yang memiliki *temperature* sekitar 20 celcius
 
 Melihat hubungan Pressure dengan variabel target menggunakan KDE
 ![16](https://user-images.githubusercontent.com/88027268/203012552-edf1b456-3842-4f82-99d6-9fc148f003fd.png)
 
-Gambar 10. KDE Pressure vs Fire Alarm
+Gambar 7. KDE Pressure vs Fire Alarm
 > Berdasarkan puncak *density* dari visualisasi diatas dikita lihat bahwa semakin tinggi *Pressure* maka kemungkinan untuk *fire alarm* berbunyi semakin besar juga
 
 Melihat hubungan Raw H2 dengan variabel target menggunakan KDE
 ![17](https://user-images.githubusercontent.com/88027268/203012750-ae9d8d1d-246f-4b93-9de5-87a05891b00c.png)
 
-Gambar 11. KDE Raw H2 vs Fire Alarm
+Gambar 8. KDE Raw H2 vs Fire Alarm
 > Berdasarkan puncak *density* dari visualisasi diatas dapat dilihat bahwa *Raw H2* pada *yes fire* dan *no fire* memiliki rentang yang serupa yaitu 12500 - 1340
 
 Melihat hubungan Raw Ethanol dengan variabel target menggunakan KDE
 ![18](https://user-images.githubusercontent.com/88027268/203012805-be948f4d-9b96-4978-92cd-d35da0cdb0ce.png)
 
-Gambar 12. KDE Raw Ethanol vs Fire Alarm
+Gambar 9. KDE Raw Ethanol vs Fire Alarm
 > Berdasarkan puncak *density* dari visualisasi diatas dapat dilihat bahwa *yes fire* memiliki kecenderungan berada di jumlah *Raw Ethanol* sekitar 19500 - 20500 dan *no fire* memiliki kecenderungan berada di jumlah *Raw Ethanol* sekitar 20000 - 21000
 
 Melihat korelasi antara tiap fitur:
 
 ![19](https://user-images.githubusercontent.com/88027268/203012863-b8347aed-42c5-486e-8851-e547ef663457.png)
 
-Gambar 13. Korelasi ditiap fitur pada dataset
+Gambar 10. Korelasi ditiap fitur pada dataset
 - Semua kolom *'PM's* dan *'NC's* memiliki korelasi yang tinggi dengan sesama kolom tersebut
 - Tidak ada fitur yang berkorelasi tinggi dengan fitur target. *Humidity*, *Pressure* dan *Raw H2* adalah fitur yang memiliki korelasi positif namun tidak tinggi dan sisanya adalah fitur yang berkorelasi rendah dengan fitur targetnya.
 
 ## Data Preparation
 ![22](https://user-images.githubusercontent.com/88027268/203012905-826bd461-2a07-43c8-b63b-129c621f49aa.jpg)
 
-Gambar 14. Illustrasi Data Preparation
+Gambar 11. Illustrasi Data Preparation
 Pada bagian ini terdapat empat tahap persiapan data, yaitu:
 
 - *Feature Selection*
@@ -328,6 +328,8 @@ Penjelasan dari formula diatas:
 - *False Negative* berarti model *machine learning* memprediksi bahwa ditempat tersebut tidak ada asap padahal ditempat tersebut terdapat asap. model *machine learning* ini dianggap gagal mendeteksi adanya asap. 
 
 ![31](https://user-images.githubusercontent.com/88027268/203662066-12b44ac6-eabe-49cc-9f6d-3dd3dd7cf6f7.png)
+
+Gambar 12. heatmap confusion matrix
 
 *Recall* adalah salah satu *metric* dari kasus klasifikasi yang lebih fokus untuk memprediksi asap dalam ruangan tersebut padahal tidak ada asap. dibandingkan model *machine learning* memprediksi tidak ada asap dalam ruangan tersebut padahal terdapat asap. tentu akan sangat fatal jika kita memilih model *machine learning* fokus memprediksi tidak ada asap dalam ruangan tersebut padahal terdapat asap, karena jika asap yang keluar adalah potensi dari kebakaran maka hal tersebut dapat berbahaya bagi orang yang ada didalam ruangan tersebut.
 

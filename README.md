@@ -7,7 +7,7 @@ Gambar 1. Illustrasi asap rokok
 
 Yang melatar belakangi pembuatan project ini adalah karena indonesia menjadi negara dengan mayoritas masyarakatnya perokok aktif dan banyak tempat yang seharusnya dilarang merokok namun seringkali perokok tetap membakar rokoknya ditempat tersebut. 
 
-- banyak dari masyarakat indonesia sering melanggar peraturan dilarang merokok diarea tersebut mengakibatkan orang yang berada di area tersebut dapat terkena dampaknya juga yang dihasilkan dari perokok itu sendiri [(Joaquin Barnoya and Stanton A. Glantz, 2005)](https://www.ahajournals.org/doi/full/10.1161/CIRCULATIONAHA.104.492215). orang-orang yang berada di *no smoking area* mengasumsikan kalo diarea tersebut tidak ada perokok sehingga orang-orang yang tidak ingin terkena asap rokok memilih tempat tersebut. selain itu model *machine learning* ini juga dapat digunakan untuk mendeteksi asap kebakaran jika didalam rumah atau ruangan terdapat asap. salah satu solusi yang dapat saya berikan adalah dengan cara membuat sebuah model *machine learning* untuk mendeteksi adanya asap ditempat tersebut, yang nantinya model *machine learning* tersebut dapat dikembangkan ke perangkat *IoT* agar dapat memfasilitasi diberbagai tempat. jika perangkat *IoT* tersebut mendeteksi asap nantinya terdapat sebuah pemberitahuan seperti *alarm*. 
+- banyak dari masyarakat indonesia sering melanggar peraturan dilarang merokok diarea tersebut mengakibatkan orang yang berada di area tersebut dapat terkena dampaknya juga yang dihasilkan dari perokok itu sendiri [(Joaquin Barnoya and Stanton A. Glantz, 2005)](https://www.ahajournals.org/doi/full/10.1161/CIRCULATIONAHA.104.492215). orang-orang yang berada di *no smoking area* mengasumsikan kalo diarea tersebut tidak ada perokok sehingga orang-orang yang tidak ingin terkena asap rokok memilih tempat tersebut. selain itu model *machine learning* ini juga dapat digunakan untuk mendeteksi asap kebakaran jika didalam rumah atau ruangan terdapat asap. salah satu solusinya adalah dengan cara membuat sebuah model *machine learning* untuk mendeteksi adanya asap ditempat tersebut, yang nantinya model *machine learning* tersebut dapat dikembangkan ke perangkat *IoT* agar dapat memfasilitasi diberbagai tempat. jika perangkat *IoT* tersebut mendeteksi asap nantinya terdapat sebuah pemberitahuan seperti *alarm*. 
  
 ## Business Understanding
 
@@ -63,7 +63,7 @@ Selanjutnya membaca dataset dan menampilkan 5 data teratas:
 | 3 	| 1654733334 	| 20.044         	| 55.28       	| 0         	| 400       	| 12390  	| 18849       	| 939.736       	| 0.0   	| 0.0   	| 0.0   	| 0.0   	| 0.0   	| 3   	|
 | 4 	| 1654733335 	| 20.059         	| 54.69       	| 0         	| 400       	| 12403  	| 18921       	| 939.744       	| 0.0   	| 0.0   	| 0.0   	| 0.0   	| 0.0   	| 4   	|
 
-Kita dapat menghapus fitur 'Unnamed: 0' Kemudian melihat dimensi dari dataset ini. lalu melihat dimensi dari dataset kita.
+Dapat menghapus fitur 'Unnamed: 0' Kemudian melihat dimensi dari dataset ini. lalu melihat dimensi dari dataset.
 
 > Dataset ini terdiri dari 62630 data dan 10 kolom.
 
@@ -96,7 +96,8 @@ Cakupan proses EDA sangat luas. Namun, secara umum, Anda dapat melakukan proses 
 | CNT            	| int64   	|
 | Fire Alarm     	| int64   	|
 
-> Seluruh fitur pada dataset kita bertipe numeric.
+> Seluruh fitur pada dataset 
+bertipe numeric.
 
 Melakukan pengecekkan deskripsi statistik pada dataset untuk mengetahui apakah terdapat anomali:
 
@@ -189,7 +190,7 @@ Melihat hubungan Pressure dengan variabel target menggunakan KDE
 ![16](https://user-images.githubusercontent.com/88027268/203012552-edf1b456-3842-4f82-99d6-9fc148f003fd.png)
 
 Gambar 7. KDE Pressure vs Fire Alarm
-> Berdasarkan puncak *density* dari visualisasi diatas dikita lihat bahwa semakin tinggi *Pressure* maka kemungkinan untuk *fire alarm* berbunyi semakin besar juga
+> Berdasarkan puncak *density* dari visualisasi diatas dapat dilihat bahwa semakin tinggi *Pressure* maka kemungkinan untuk *fire alarm* berbunyi semakin besar juga
 
 Melihat hubungan Raw H2 dengan variabel target menggunakan KDE
 ![17](https://user-images.githubusercontent.com/88027268/203012750-ae9d8d1d-246f-4b93-9de5-87a05891b00c.png)
@@ -241,17 +242,17 @@ Fitur yang akan dilakukan PCA adalah *PM1.0, PM2.5, NC0.5, NC1.0 dan NC2.5*. Kar
 
 > Hasil dari *PCA* adalah, 0.9% informasi pada kelima fitur *'PM1.0', 'PM2.5', 'NC0.5', 'NC1.0' dan 'NC2.5'* terdapat pada *Principal Component* pertama. Sedangkan sisanya, sebesar 0.1%, 0.0%, 0.0% dan 0.0% terdapat pada *Principal Component* kedua, ketiga, keempat dan kelima.
 
-Dari hasil diatas dapat dipertahankan pada *Principal Component* pertama saja untuk menggantikan kelima fitur yang telah direduksi sebelumnya lalu kita beri nama fitur ini dengan *'dimension'*
+Dari hasil diatas dapat dipertahankan pada *Principal Component* pertama saja untuk menggantikan kelima fitur yang telah direduksi sebelumnya lalu beri nama fitur ini dengan *'dimension'*
 
 ### Pembagian dataset
 
-Selanjutnya dapat melakukan *split data* ke dalam beberapa bagian yaitu *data train* dan *data test*. kita melakukan beberapa transformasi pada *data train* sedangkan *data test* kita gunakan sebagai data uji yang diasumsikan adalah data baru sama halnya nanti di *production*. karna *data test* adalah data baru sehingga kita tidak diperkenankan untuk melakukan transformasi apapun, jika kita melakukan transformasi pada *data test* itu akan menimbulkan masalah baru yaitu *data leakage* dan dapat menyebabkan model *machine learning* kita *bias*.
+Selanjutnya dapat melakukan *split data* ke dalam beberapa bagian yaitu *data train* dan *data test*. Melakukan beberapa transformasi pada *data train* sedangkan *data test* digunakan sebagai data uji yang diasumsikan adalah data baru sama halnya nanti di *production*. karna *data test* adalah data baru sehingga tidak diperkenankan untuk melakukan transformasi apapun, jika melakukan transformasi pada *data test* itu akan menimbulkan masalah baru yaitu *data leakage* dan dapat menyebabkan model *machine learning* *bias*.
 
-proporsi pembagian data latih dan uji biasanya adalah 80:20. Bahwa proporsi ini hanya kebiasaan umum saja. Tujuan dari data uji adalah untuk untuk mengukur kinerja model pada data baru. Jadi, jika dataset yang kita miliki berukuran sangat kecil, misalnya kurang dari 1.000 sampel, maka pembagian 80:20 ini cukup *ideal*. Namun, jika memiliki dataset berukuran besar, kita perlu memikirkan strategi pembagian dataset lain agar proporsi data uji tidak terlalu banyak.
+proporsi pembagian data latih dan uji biasanya adalah 80:20. Bahwa proporsi ini hanya kebiasaan umum saja. Tujuan dari data uji adalah untuk untuk mengukur kinerja model pada data baru. Jadi, jika dataset yang dimiliki berukuran sangat kecil, misalnya kurang dari 1.000 sampel, maka pembagian 80:20 ini cukup *ideal*. Namun, jika memiliki dataset berukuran besar, Perlu memikirkan strategi pembagian dataset lain agar proporsi data uji tidak terlalu banyak.
 
 Sebagai contoh, Terdapat dataset berjumlah 5 juta sampel. Dengan proporsi pembagian 80:20, maka data uji akan berjumlah 1 juta sampel. Tentu ini merupakan jumlah yang terlalu banyak karena untuk proses pengujian tidak dibutuhkan 1 juta sampel. Dalam kasus proses pengujian ini sebenarnya cukup menggunakan 1-2% data atau sebanyak 100.000 hingga 200.000 sampel saja.
 
-<b>Bisa disimpulkan pembagian proporsi untuk *data train* dan *data test* sangat *relative* tergantung ketersedian dataset yang kita punya.</b>
+<b>Bisa disimpulkan pembagian proporsi untuk *data train* dan *data test* sangat *relative* tergantung ketersedian dataset.</b>
 
 Penjelasan:
 - X adalah sebagai variabel *independent*
@@ -267,16 +268,16 @@ Melihat dimensi hasil pembagian pada *data train* dan *data test*:
 | Test Data  	| 6263  	|
 
 ### Standarisasi
-Setelah melakukan split data ke dalam *data train* dan *data test*, Selanjutnya adalah melakukan *data scaling*, Karena *value* pada tiap fitur memiliki angka yang signifikan dan hal itu dapat mengakibatkan model dari *machine learning* kita kesulitan dalam mencari polanya oleh karena itu dapat dilakukan penyeragaman value tersebut kedalam rentang -1 to 1 menggunakan *StandardScaler*.
+Setelah melakukan split data ke dalam *data train* dan *data test*, Selanjutnya adalah melakukan *data scaling*, Karena *value* pada tiap fitur memiliki angka yang signifikan dan hal itu dapat mengakibatkan model dari *machine learning* kesulitan dalam mencari polanya oleh karena itu dapat dilakukan penyeragaman value tersebut kedalam rentang -1 to 1 menggunakan *StandardScaler*.
 
 ## Modeling
 
-Selanjutnya akan lakukan *training* pada *data train* dan melakukan *predict* pada *data test* yang telah kita split sebelumnya. Algoritma yang akan kita gunakan adalah *Logistic Regression*.
+Selanjutnya akan lakukan *training* pada *data train* dan melakukan *predict* pada *data test* yang telah displit sebelumnya. Algoritma yang akan digunakan adalah *Logistic Regression*.
 
-*Logistic Regression* hampir mirip dengan *Linear Regression*, memiliki kemiripan yaitu sama-sama memiliki garis regresi. Salah satu yang membedakan adalah *Logistic Regression* digunakan untuk menentukan prediksi yang kita buat benar atau salah sedangkan *Linear Regression* digunakan untuk memprediksi nilai yang kontinu.
+*Logistic Regression* hampir mirip dengan *Linear Regression*, memiliki kemiripan yaitu sama-sama memiliki garis regresi. Salah satu yang membedakan adalah *Logistic Regression* digunakan untuk menentukan prediksi yang benar atau salah sedangkan *Linear Regression* digunakan untuk memprediksi nilai yang kontinu.
 
 Kelebihan *Logistic Regression*:
-- Ketika terjadi *overfitting* pada algoritma *Logistic Regression* kita dapat menggunakan parameter regularisasi (L1 dan L2) untuk menghindari *overfitting*.
+- Ketika terjadi *overfitting* pada algoritma *Logistic Regression* dapat menggunakan parameter regularisasi (L1 dan L2) untuk menghindari *overfitting*.
 - Tidak memerlukan spesifikasi *device* yang tinggi untuk melakukan *training* pada algoritma *logistic regression*.
 - bagus Ketika digunakan pada masalah *binary classification*.
 
@@ -284,22 +285,22 @@ Kekurangan *Logistic Regression*:
 - Pada data dengan *high dimensional* akan memiliki kecenderungan *overfitting*, salah satu cara untuk menghindari hal tersebut adalah dengan melakukan *regularization* akan tetapi hal tersebut dapat menambah kompleksitas dari model yang akan dihasilkan.
 - Permasalahan *non-linear* sulit untuk diselesaikan menggunakan *logistic regression* dikarenakan algoritma tersebut memiliki *linear decision surface*.
 
-Selanjutnya *define* sebuah *object* dari *Logistic Regression* dan beberapa parameter yang akan kita lakukan *hyperparameter tuning* untuk mendapatkan parameter terbaik pada *case* kita. 
+Selanjutnya *define* sebuah *object* dari *Logistic Regression* dan beberapa parameter yang akan dilakukan *hyperparameter tuning* untuk mendapatkan parameter terbaik pada *case*. 
 
 penjelasan dari setiap parameter:
 
-- *solvers* adalah *optimizer* dari algoritma yang akan kita gunakan sebagai *method* untuk mencari *loss* terkecil dari *gradient descent*. terdapat beberapa *solvers* yang dapat digunakan seperti *newton-cg, lbfgs, liblinear, sag* dan *saga*. Secara *default* akan menggunakan *lbfgs*.
-- *C_values* adalah nilai dari *regularization* yang kita gunakan, semakin kecil semakin memanandakan *regularization* yang kita lakukan semakin kuat. gunanya adalah untuk menghindari *overfitting*.
-- *penalty* adalah bentuk *regularization* dari nilai yang telah kita *specify* sebelumnya pada *c_values*. terdapat beberapa jenis *penalty* yang dapat kita kombinasikan. seperti *l1, l2* dan *elasticnet*.
+- *solvers* adalah *optimizer* dari algoritma yang akan digunakan sebagai *method* untuk mencari *loss* terkecil dari *gradient descent*. terdapat beberapa *solvers* yang dapat digunakan seperti *newton-cg, lbfgs, liblinear, sag* dan *saga*. Secara *default* akan menggunakan *lbfgs*.
+- *C_values* adalah nilai dari *regularization* yang digunakan, semakin kecil semakin memanandakan *regularization* yang dilakukan semakin kuat. gunanya adalah untuk menghindari *overfitting*.
+- *penalty* adalah bentuk *regularization* dari nilai yang telah di*specify* sebelumnya pada *c_values*. terdapat beberapa jenis *penalty* yang dapat dikombinasikan. seperti *l1, l2* dan *elasticnet*.
 
 Selanjutnya adalah melakukan *hyperparameter tuning* menggunakan *GridSearchCV*. *GridSearchCV* adalah metode pemilihan kombinasi model dan *hyperparameter* dengan cara menguji coba satu persatu kombinasi dan melakukan validasi untuk setiap kombinasi. Tujuannya adalah menentukan kombinasi yang menghasilkan performa model terbaik yang dapat dipilih untuk dijadikan model untuk prediksi.
 
-penjelasan dari parameter yang kita gunakan:
+penjelasan dari parameter yang digunakan:
 
-- *estimator* adalah *object* dari algoritma yang telah kita *define* sebelumnya.
-- *param_grid* adalah parameter dari *logistic regression* yang akan kita lakukan *hyperparameter tuning* untuk mencari kombinasi parameter yang terbaik
-- *n_job*s adalah jumlah dari *processor* yang dipunya untuk gunakan nge *running jobs* tersebut secara *parallel*. *value* -1 berarti kita nge *running jobs* tersebut menggunakan seluruh dari *processor* yang dipunya.
-- *cv* adalah *cross-validation generator* yang dimana kita menentukan ingin melakukan berapa kali percobaan secara acak pada dataset kita.
+- *estimator* adalah *object* dari algoritma yang telah di*define* sebelumnya.
+- *param_grid* adalah parameter dari *logistic regression* yang akan dilakukan *hyperparameter tuning* untuk mencari kombinasi parameter yang terbaik
+- *n_job*s adalah jumlah dari *processor* yang dipunya untuk gunakan nge *running jobs* tersebut secara *parallel*. *value* -1 berarti nge *running jobs* tersebut menggunakan seluruh dari *processor* yang dipunya.
+- *cv* adalah *cross-validation generator* yang menentukan ingin melakukan berapa kali percobaan secara acak pada dataset.
 
 ## Evaluation
 Menampilkan hasil dari prediksi berupa *score* tertinggi dari kombinasi parameter terbaik yang telah dilakukan *tuning*.
@@ -316,9 +317,9 @@ Menampilkan hasil dari prediksi berupa *score* tertinggi dari kombinasi paramete
 | 0 	| 0.9385026737967914 	| 0.9892897406989853 	| 0.9632272228320526 	| 1774.0  	|
 | 1 	| 0.9956749374004097 	| 0.974381822232123  	| 0.9849133078135555 	| 4489.0  	|
 
-Kita mendapat *score* dari* metric *recall* yang sangat baik yaitu 97% namun *score* ini masih dapat kita improve menggunakan beberapa cara yaitu *feature importance*, melakukan *feature engineering* dan menggunakan parameter lebih banyak lagi untuk di *hyperparameter tuning*.
+Hasil *score* dari* metric *recall* yang sangat baik yaitu 97% namun *score* ini masih dapat dilakukan improve menggunakan beberapa cara yaitu *feature importance*, melakukan *feature engineering* dan menggunakan parameter lebih banyak lagi untuk di *hyperparameter tuning*.
 
-*metric* yang kita gunakan pada kasus ini adalah: *Recall*, karena hasil yang dinginkan adalah *False Negative(FN)* sekecil mungkin sehingga kita akan menggunakan *recall* sebagai *metric* patokan pada kasus ini. konsep dari *recall* ini sebagai berikut:
+*metric* yang digunakan pada kasus ini adalah: *Recall*, karena hasil yang dinginkan adalah *False Negative(FN)* sekecil mungkin sehingga akan menggunakan *recall* sebagai *metric* patokan pada kasus ini. konsep dari *recall* ini sebagai berikut:
 
 ```math
 Recall = \frac{True positive}{True positive + False Negative}
@@ -332,8 +333,8 @@ Penjelasan dari formula diatas:
 
 Gambar 12. heatmap confusion matrix
 
-*Recall* adalah salah satu *metric* dari kasus klasifikasi yang lebih fokus untuk memprediksi asap dalam ruangan tersebut padahal tidak ada asap. dibandingkan model *machine learning* memprediksi tidak ada asap dalam ruangan tersebut padahal terdapat asap. tentu akan sangat fatal jika kita memilih model *machine learning* fokus memprediksi tidak ada asap dalam ruangan tersebut padahal terdapat asap, karena jika asap yang keluar adalah potensi dari kebakaran maka hal tersebut dapat berbahaya bagi orang yang ada didalam ruangan tersebut.
+*Recall* adalah salah satu *metric* dari kasus klasifikasi yang lebih fokus untuk memprediksi asap dalam ruangan tersebut padahal tidak ada asap. dibandingkan model *machine learning* memprediksi tidak ada asap dalam ruangan tersebut padahal terdapat asap. tentu akan sangat fatal jika model *machine learning* memilih fokus memprediksi tidak ada asap dalam ruangan tersebut padahal terdapat asap, karena jika asap yang keluar adalah potensi dari kebakaran maka hal tersebut dapat berbahaya bagi orang yang ada didalam ruangan tersebut.
 
-Kesimpulan: Projek ini berhasil mengetahui bahwa fitur dari *Humadity* dan *CNT* adalah fitur yang paling berkorelasi dengan *Fire Alarm*. Menarik bahwa hanya dengan algoritma *machine learning* klasik sudah dapat memberikan *score* yang sangat tinggi. kita dapat mencoba menggunakan *neural network* untuk hasil yang lebih baik lagi karena algoritma *machine learning* klasik seperti *logistic regression* memiliki keterbatasan dan *neural network* dapat menutupi dari keterbatasan itu.
+Kesimpulan: Projek ini berhasil mengetahui bahwa fitur dari *Humadity* dan *CNT* adalah fitur yang paling berkorelasi dengan *Fire Alarm*. Menarik bahwa hanya dengan algoritma *machine learning* klasik sudah dapat memberikan *score* yang sangat tinggi. Dapat mencoba menggunakan *neural network* untuk hasil yang lebih baik lagi karena algoritma *machine learning* klasik seperti *logistic regression* memiliki keterbatasan dan *neural network* dapat menutupi dari keterbatasan itu.
 
 **---END---**

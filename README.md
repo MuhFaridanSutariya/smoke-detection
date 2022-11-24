@@ -301,7 +301,7 @@ penjelasan dari parameter yang kita gunakan:
 - *cv* adalah *cross-validation generator* yang dimana kita menentukan ingin melakukan berapa kali percobaan secara acak pada dataset kita.
 
 ## Evaluation
-Menampilkan hasil dari prediksi berupa *score* dari setiap kombinasi parameter terbaik yang telah dilakukan *tuning* sebelumnya.
+Menampilkan hasil dari prediksi berupa *score* tertinggi dari kombinasi parameter terbaik yang telah dilakukan *tuning*.
 
 | names   	| values    	|
 |---------	|-----------	|

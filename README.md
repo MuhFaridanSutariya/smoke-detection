@@ -127,7 +127,7 @@ Melakukan pengecekkan deskripsi statistik pada dataset untuk mengetahui apakah t
 
 ### Exploratory Exploratory Data Analysis - Menangani Missing Value dan Outliers:
 
-|                	| Total 	| Percentage of Missing Values 	|
+| Kolom          	| Total 	| Percentage of Missing Values 	|
 |----------------	|-------	|------------------------------	|
 | UTC            	| 0     	| 0.0                          	|
 | Temperature[C] 	| 0     	| 0.0                          	|

@@ -262,6 +262,7 @@ Penjelasan:
 Melihat dimensi hasil pembagian pada *data train* dan *data test*:
 
 | Total Data 	| 62630 	|
+|------------	|-------	|
 | Train Data 	| 56367 	|
 | Test Data  	| 6263  	|
 

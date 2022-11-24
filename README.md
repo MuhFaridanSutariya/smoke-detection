@@ -152,7 +152,14 @@ Melakukan pengecekkan deskripsi statistik pada dataset untuk mengetahui apakah t
 ![11](https://user-images.githubusercontent.com/88027268/203012218-724f7176-142e-428f-b095-fd845096f658.jpg)
 ![12](https://user-images.githubusercontent.com/88027268/203012254-f7c28332-b38a-4507-8ca1-3517aa0071b5.jpg)
 Gambar 6. Outlier pada dataset
-> Dengan melihat konsistensi nilai-nilai *outlier* dapat diartikan bahwa hal tersebut bukan karena kesalahan manusia saat menghitung.
+
+- Outlier yang terjadi pada fitur temperature merupakan nilai yang wajar karena temperature dapat berubah secara signifikan tiap waktu.
+- Outlier yang terjadi pada fitur Raw Ethanol, TVOC dan Raw H2 merupakan nilai yang wajar karena dapat berubah secara signifikan tiap saat tergantung pada gas yang dapat dideteksi oleh sistem
+- Outlier yang terjadi pada fitur eCO2 merupakan turunan dari nilai TVOC sehingga outlier yang dihasilkan seperti yang terjadi pada fitur TVOC
+- Outlier yang terjadi pada fitur Humidity merupakan nilai yang wajar karena dapat berubah secara signifikan di suatu kondisi dan bergantung pada temperature
+- Outlier yang terjadi pada fitur Pressure merupakan nilai yang wajar karena bergantung pada temperature saat itu
+- Outlier yang terjadi pada fitur PM1.0 dan PM2.5 merupakan nilai yang wajar karena yang dapat menghasilkan PM1.0 dan PM2.5 bukan cuman asap melainkan seperti tempat konstruksi dan jalan tak beraspal.
+- Outlier yang terjadi pada fitur NC0.5, NC1.0 dan NC2.5 merupakan nilai yang wajar karena sama halnya pada fitur PM1.0 dan PM2.5
 
 ### Exploratory Data Analysis - Univariate Analysis:
 Melihat proporsi dari nilai variabel target pada dataset:

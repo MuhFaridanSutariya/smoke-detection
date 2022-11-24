@@ -274,8 +274,6 @@ Selanjutnya akan lakukan *training* pada *data train* dan melakukan *predict* pa
 
 *Logistic Regression* hampir mirip dengan *Linear Regression*, memiliki kemiripan yaitu sama-sama memiliki garis regresi. Salah satu yang membedakan adalah *Logistic Regression* digunakan untuk menentukan prediksi yang kita buat benar atau salah sedangkan *Linear Regression* digunakan untuk memprediksi nilai yang kontinu.
 
-Kenapa saya menggunakan *Logistic Regression*? ini dikarenakan alogritma model ini menggunakan.
-
 Kelebihan *Logistic Regression*:
 - Ketika terjadi *overfitting* pada algoritma *Logistic Regression* kita dapat menggunakan parameter regularisasi (L1 dan L2) untuk menghindari *overfitting*.
 - Tidak memerlukan spesifikasi *device* yang tinggi untuk melakukan *training* pada algoritma *logistic regression*.

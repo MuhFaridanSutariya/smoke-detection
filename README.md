@@ -65,7 +65,7 @@ Selanjutnya membaca dataset dan menampilkan 5 data teratas:
 
 Dapat menghapus fitur 'Unnamed: 0' Kemudian melihat dimensi dari dataset ini. lalu melihat dimensi dari dataset.
 
-> Dataset ini terdiri dari 62630 data dan 10 kolom.
+> Dataset ini terdiri dari 62630 data dan 15 kolom.
 
 ### Exploratory Data Analysis - Deskripsi Variabel:
 *Exploratory data analysis* atau sering disingkat EDA merupakan proses investigasi awal pada data untuk menganalisis karakteristik, menemukan pola, anomali, dan memeriksa asumsi pada data. Teknik ini biasanya menggunakan bantuan statistik dan representasi grafis atau visualisasi.
